@@ -1,0 +1,56 @@
+
+import java.util.HashMap;
+import java.util.*;
+import java.lang.Math;
+import java.util.Scanner;
+ class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+
+
+
+
+        Scanner sc=new Scanner(System.in);
+        int  N=sc.nextInt();
+        int a[]=new int[N];
+        Map<Integer,Integer> map=new HashMap<Integer,Integer>();
+        int k=0,sum=0,att_res,i,j;
+
+            int pos,att;
+            int pok=N;
+        while(pok>0){
+
+            pos=sc.nextInt();
+            att=sc.nextInt();
+            a[k]=pos;
+            map.put(pos,att);
+            k++;
+            pok--;
+        }
+
+
+        for(i=0;i<N;i++){
+            for(j=i+1;j<N;j++){
+
+                att_res=Math.abs(a[i]-a[j])*Math.max(map.get(a[i]),map.get(a[j]));
+                   
+
+                sum=sum+att_res;
+
+            }
+        }
+
+        System.out.println(sum);
+
+
+
+
+
+    }
+
+}
+

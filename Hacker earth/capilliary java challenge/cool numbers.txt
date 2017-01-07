@@ -1,0 +1,53 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+ 
+ 
+ 
+class TestClass {
+	int getNum(int x);
+	int Go(int y);
+	int getNum(int num){
+           int j=num;
+           while(j<10000000){
+               if(j%2==0||j%5==0){
+                   int y=j;
+                   int Go(y){
+                       if(y==0){break;}else{
+                       int last=y%10;
+                       if(last==2||last==5){y=y/10;Go(y);}
+                       else{j++;}
+ 
+                   }}
+ 
+ 
+               }
+               else{j++;}
+ 
+           }
+           return j;
+ 
+ 
+       }
+    public static void main(String args[] ) throws Exception {
+Scanner sc=new Scanner(System.in);   
+TestClass t=new TestClass();
+ 
+int l,r,sum,test;
+test=sc.nextInt();
+while(test>0){
+l=sc.nextInt();r=sc.nextInt();
+sum=0;
+for(i=l;i<=r;i++){
+ 
+    sum=sum+t.getNum(i);
+ 
+}
+ 
+System.out.println(sum);
+ 
+ 
+test--;}
+    }
+}
+ 

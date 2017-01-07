@@ -1,0 +1,45 @@
+
+
+import java.util.HashMap;
+import java.util.*;
+import java.lang.Math;
+import java.util.Scanner;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+     Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+     Map<Character,Character> map=new HashMap<Character,Character>();
+     char array[]={'m','i','l','l','y'};
+     int i,j;
+     while(n>0){
+         int count=0;
+         String s=sc.next();
+         int lenght=s.length();
+      
+         char a[]=s.toCharArray();
+         
+       
+        outer:
+    for(i=0;i<5;i++){
+        
+        inner:
+        for(j=0;j<lenght;j++){
+            
+            if(array[i]==a[j]){count++;a[j]='0';break;}
+            
+        }
+        
+        
+    }   
+     
+   
+        if(count==5){System.out.println("Milly is Intelligent");}
+         else{System.out.println("Milly is not Intelligent");}
+         
+        
+         n--;
+     }
+
+        
+    }
+}

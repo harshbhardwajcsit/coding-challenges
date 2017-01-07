@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        String s=sc.next();
+            int i=0,count=0;
+        /*
+        String st=s.substring(i,i+2);
+        if(st.equals("010")==true){
+        System.out.println("true");
+        }
+        */
+        
+
+        while(i<=n-3){
+          String st=s.substring(i,i+3);
+            if(st.equals("010")==true){count++; i=i+3;
+                                         }
+            else{
+                
+                i=i+1;
+            }
+            
+            
+        }
+        System.out.println(count);
+       
+    }
+}
