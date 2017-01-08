@@ -1,0 +1,40 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int T=sc.nextInt();
+		int P,X,Y,i=1;
+		while(i<=T){
+				 P=sc.nextInt();
+			     X=sc.nextInt();
+				 Y=sc.nextInt();
+				double angleDeg=(P*360)/100;
+				double valRad=Math.sqrt((X-50)*(X-50)+(Y-50)*(Y-50));
+				double var=X/valRad;
+				double valAng=Math.atan(X/Y)*((180/Math.PI));
+				//System.out.println("ang :"+valAng+"rad :"+valRad+" var"+var);
+			 
+				if(valRad>50){
+					System.out.println("Case #"+i+": white");
+					}
+				else{
+				
+			    if(valAng>angleDeg){
+			    System.out.println("Case #"+i+": white");
+			    	}
+			    else{
+			    	System.out.println("Case #"+i+": black");
+			    	}
+				}
+			i++;
+		}
+	}
+}
