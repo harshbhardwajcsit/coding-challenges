@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+       int q=in.nextInt();
+        int count,i;
+        while(q>0){
+            int x=in.nextInt();
+            count=0;
+            for(i=1;i<x;i++){
+                if((i^x)>x){count++;} //operator used for xor
+            }
+            System.out.println(count);
+            
+            q--;
+        }
+    }
+}
