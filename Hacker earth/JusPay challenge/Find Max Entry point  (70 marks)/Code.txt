@@ -1,0 +1,41 @@
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+ class Find_min_entry {
+
+    void function(int array[]){
+        Map<Integer,Integer> map=new HashMap<Integer,Integer>();
+        int j;
+        for(j=0;j<array.length;j++){
+        if(map.containsKey(array[j])==false){map.put(array[j],1);}
+        else{map.put(array[j],map.get(array[j])+1);}
+        }
+
+        TreeMap<Integer,Integer> tmap=new TreeMap<Integer,Integer>();
+        for(Map.Entry<Integer,Integer> entry : map.entrySet() ){
+        int value=entry.getValue();
+        tmap.put(value, value);
+
+        }
+
+
+
+
+
+        System.out.print(tmap.lastKey());
+    }
+
+    public static void main(String[] args) {
+     Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+     int graph[]=new int[n];
+     int i;
+     for( i=0;i<n;i++){
+         graph[i]=sc.nextInt();
+     }
+     Find_min_entry find=new Find_min_entry();
+     find.function(graph);
+
+    }
+
+}

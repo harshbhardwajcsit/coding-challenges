@@ -1,0 +1,51 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package find_min_entry;
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+public class Find_min_entry {
+   Map<Integer,Integer> map=new HashMap<Integer,Integer>();
+   TreeMap<Integer,Integer> tmap=new TreeMap<Integer,Integer>();
+   int Cycle_counter=0;
+   int beg;
+    void function(int node,int newNode,int array[]){
+        if(newNode==-1){ }else{
+            int nnode=array[newNode];
+         if(map.containsKey(nnode)==false){
+            map.put(nnode, nnode);
+            Cycle_counter++;
+            //int val=array[newNode];
+            function(node,nnode,array);
+          }
+         else{
+             if(map.containsKey(node)==true){System.out.println(map);tmap.put(node,Cycle_counter);map.clear();Cycle_counter=0;}
+             else{map.clear();
+                 Cycle_counter=0;}
+          }
+
+    }}
+    void tmap_value(){
+        System.out.println(tmap);
+    }
+
+    public static void main(String[] args) {
+     Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+     int graph[]=new int[n];
+     int i;
+     for( i=0;i<n;i++){
+         graph[i]=sc.nextInt();
+     }
+    
+     Find_min_entry find=new Find_min_entry();
+     for(i=0;i<n;i++){
+     find.function(i,i,graph);
+     }
+     find.tmap_value();
+    }
+
+}

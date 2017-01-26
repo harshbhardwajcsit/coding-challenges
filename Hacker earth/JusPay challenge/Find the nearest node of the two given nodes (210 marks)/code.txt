@@ -1,0 +1,36 @@
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+public class Find_min_entry {
+   Map<Integer,Integer> map=new HashMap<Integer,Integer>();
+    void function(int fnode,int lnode,int array[]){
+        int fnext=array[fnode];
+        int lnext=array[lnode];
+        if(map.containsKey(fnext)==false&&map.containsKey(lnext)==false){
+        map.put(fnext,fnext);
+        map.put(lnext,lnext);
+        function(fnext,lnext,array);
+        }
+        else{ if(map.containsKey(fnext)==true){System.out.print(fnext);}
+        else{System.out.print(lnext);}
+        }
+
+    }
+
+    public static void main(String[] args) {
+     Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+     int graph[]=new int[n];
+     int i;
+     for( i=0;i<n;i++){
+         graph[i]=sc.nextInt();
+     }
+     int x,y;
+     x=sc.nextInt();
+     y=sc.nextInt();
+     Find_min_entry find=new Find_min_entry();
+     find.function(x,y,graph);
+
+    }
+
+}
