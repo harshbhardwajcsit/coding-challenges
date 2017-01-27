@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        long xTreasure = in.nextLong();
+        long yTreasure = in.nextLong();
+        int n = in.nextInt();
+        long[][] direction = new long[n][2];
+        int i,j;
+        for(i=0; i < n;i++){
+            for( j=0; j < 2; j++){
+                direction[i][j] = in.nextLong();
+            }
+        }
+        
+        long xf=xTreasure;
+        long yf=yTreasure;
+       // your code goes here
+          for( i=n-1; i>=0;i--){
+                 ///System.out.println(xf+" "+yf);
+            //  System.out.println(direction[i][0]+" "+direction[i][1]);
+                xf=xf-direction[i][0];
+                yf=yf-direction[i][1];
+           
+            
+        }
+        
+        System.out.println(xf+" "+yf);
+        
+        
+    }
+}
