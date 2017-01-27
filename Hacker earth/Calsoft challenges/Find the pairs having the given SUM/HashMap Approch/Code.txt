@@ -1,0 +1,30 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int a[]=new int[n];
+		Map<Integer,Integer> map=new HashMap<Integer,Integer>();
+		int i;
+		for(i=0;i<n;i++){
+			a[i]=sc.nextInt();
+			map.put(a[i],i);
+		}
+		int k=sc.nextInt();
+		
+			for(i=0;i<n;i++){
+		int p=k-a[i];
+		if(map.containsKey(p)==true){a[i]=0;System.out.println(i+" "+map.get(p));;}
+			
+		}
+		
+	}
+}
