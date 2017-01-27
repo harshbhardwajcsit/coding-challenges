@@ -1,0 +1,70 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+   static Map<Integer,Integer> map=new HashMap<Integer,Integer>();
+    int bribe=0;
+   void function(int p1,int p2,int arr[]){
+       
+       if(p1!=arr.length-1){
+       if(arr[p1]>arr[p2]){
+        map.put(arr[p1],map.get(arr[p1])+1);   
+        map.put(arr[p2],map.get(arr[p2])+1);   
+        int temp=arr[p1];
+           arr[p1]=arr[p2];
+           arr[p2]=temp;
+           bribe++;
+           p1=0;
+           p2=1;
+           // System.out.println(p1+" "+p2);
+           function(p1,p2,arr);
+                          }
+       else{p1++;p2++;
+             // System.out.println(p1+" "+p2);
+           function(p1,p2,arr);
+           
+           }
+       
+       
+       }
+       
+       else{ System.out.println("bribe : " +bribe);
+           System.out.println("MAP "+map);}
+       
+         
+   }
+    void validate(){
+        boolean b=false;
+        for(Map.Entry<Integer,Integer> entry : map.entrySet()){
+            int value=entry.getValue();
+            if(value<=2){}
+            else{b=true;}
+        }
+        if(b==true){System.out.println("Invalid queue");}
+        else{System.out.println("valid queue");}
+        
+    }
+  
+    
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        //int test=sc.nextInt();
+        int num=sc.nextInt();
+        int i;
+        int queue[]=new int[num];
+        for(i=0;i<num;i++){
+            queue[i]=sc.nextInt();
+            map.put(queue[i],0);
+        }
+        
+        Solution s=new Solution();
+        int pointer1=0,pointer2=1;
+        s.function(pointer1,pointer2,queue);
+        s.validate();
+    }
+}
+
+
