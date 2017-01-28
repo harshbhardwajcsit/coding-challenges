@@ -1,0 +1,108 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    static Map<Integer,Integer> map=new HashMap<Integer,Integer>();
+    getAtmost(int i,int j){
+        int count_nodes=0;
+        
+        if(i-1>=1&&j+1<=n){if(map.containsKey(i-1)==false||map.containsValue(j+1)==false){
+            int a=function1(count_nodes,i-1,j+1);
+        }}
+        if(i>=1&&j+1<=n){if(map.containsKey(i)==false||map.containsValue(j+1)==false){
+            int b=function1(count_nodes,i,j+1);
+        }}
+        if(i+1<=n&&j+1<=n){if(map.containsKey(i+1)==false||map.containsValue(j+1)==false){
+            int c=function1(count_nodes,i+1,j+1);
+        }}
+        if(i+1<=n&&j>=1){if(map.containsKey(i+1)==false||map.containsValue(j)==false){
+            int d=function1(count_nodes,i+1,j);
+        }}
+        
+        if(i+1<=n&&j-1>=1){if(map.containsKey(i+1)==false||map.containsValue(j-1)==false){
+            int e=function1(count_nodes,i+1,j-1);
+        }}
+        if(i>=1&&j-1>=1){if(map.containsKey(i)==false||map.containsValue(j-1)==false){
+            int f=function1(count_nodes,i,j-1);
+        }}
+        if(i-1>=1&&j-1>=1){if(map.containsKey(i-1)==false||map.containsValue(j-1)==false){
+            int g=function1(count_nodes,i-1,j-1);
+        }}
+        
+        if(i-1>=1&&j>=1){if(map.containsKey(i)==false||map.containsValue(j+1)==false){
+            int b=function1(count_nodes,i,j+1);
+        }}
+        
+    }
+        function1(int count,int i,int j){
+            if(i>=1&&j<=n)
+                {if(map.containsKey(i)==false||map.containsValue(j)==false){count++; i=i-1;j=j+1; function1(i,j);}
+                }
+            else{return count;}
+        }
+       
+      function2(int count,int i,int j){
+            if(i>=1&&j<=n)
+                {if(map.containsKey(i)==false||map.containsValue(j)==false){count++;j=j+1; function1(i,j);}
+                }
+            else{return count;}
+        }
+      function3(int count,int i,int j){
+            if(i>=1&&j<=n)
+                {if(map.containsKey(i)==false||map.containsValue(j)==false){count++; i=i+1;j=j+1; function1(i,j);}
+                }
+            else{return count;}
+        }
+      function4(int count,int i,int j){
+            if(i>=1&&j<=n)
+                {if(map.containsKey(i)==false||map.containsValue(j)==false){count++; i=i+1; function1(i,j);}
+                }
+            else{return count;}
+        }
+    
+      function5(int count,int i,int j){
+            if(i>=1&&j<=n)
+                {if(map.containsKey(i)==false||map.containsValue(j)==false){count++; i=i+1;j=j-1; function1(i,j);}
+                }
+            else{return count;}
+        }
+      function6(int count,int i,int j){
+            if(i>=1&&j<=n)
+                {if(map.containsKey(i)==false||map.containsValue(j)==false){count++; j=j-1; function1(i,j);}
+                }
+            else{return count;}
+        }
+      function7(int count,int i,int j){
+            if(i>=1&&j<=n)
+                {if(map.containsKey(i)==false||map.containsValue(j)==false){count++; i=i-1;j=j-1; function1(i,j);}
+                }
+            else{return count;}
+        }
+      function8(int count,int i,int j){
+            if(i>=1&&j<=n)
+                {if(map.containsKey(i)==false||map.containsValue(j)==false){count++; i=i-1;j=j+1; function1(i,j);}
+                }
+            else{return count;}
+        }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Solution solution=new Solution();
+        int n = in.nextInt();
+        int k = in.nextInt();
+        int rQueen = in.nextInt();
+        int cQueen = in.nextInt();
+        for(i= 0; i< k; i++){
+            int rObstacle = in.nextInt();
+            int cObstacle = in.nextInt();
+            map.put(cObstacle,rObstacle);
+            // your code goes here
+        }
+        
+        
+        
+    }
+}
