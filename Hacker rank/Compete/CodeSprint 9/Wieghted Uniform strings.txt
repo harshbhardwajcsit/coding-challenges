@@ -1,0 +1,87 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+        boolean function(String string){
+                char a[]=string.toCharArray();
+                int checker=0,k=0,len=a.length;
+              while(k<len){
+                  if(a[0]==a[k]){checker++;}
+                  k++;
+              }
+                if(checker==a.length){return true;}
+                else{return false;}
+                
+            }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Solution sol=new Solution();
+        String s = in.next();
+        int n = in.nextInt();
+        //preprocessing steps
+        Map<String,Integer> map=new HashMap<String,Integer>(); 
+         Map<String,Integer> map2=new HashMap<String,Integer>(); 
+      /*  int a,b;
+        for ( a = 65,b=1; a <= 90 && b<=26; a++,b++) {
+            map.put(Character.toString((char) a), b);}*/
+        map.put("a",1);
+        map.put("b",2);
+        map.put("c",3);
+        map.put("d",4);
+        map.put("e",5);
+        map.put("f",6);
+        map.put("g",7);
+        map.put("h",8);
+        map.put("i",9);
+        map.put("j",10);
+        map.put("k",11);
+        map.put("l",12);
+        map.put("m",13);
+        map.put("n",14);
+        map.put("o",15);
+        map.put("p",16);
+        map.put("q",17);
+        map.put("r",18);
+        map.put("s",19);
+        map.put("t",20);
+        map.put("u",21);
+        map.put("v",22);
+        map.put("w",23);
+        map.put("x",24);
+        map.put("y",25);
+        map.put("z",26);
+        
+         
+       
+        
+        int c,i ;
+        int length=s.length();    
+         for( c = 0 ; c < length ; c++ )
+         {
+         for( i = 1 ; i <= length - c ; i++ )
+         {
+            String sub = s.substring(c, c+i);
+          char carray[]=sub.toCharArray();
+         System.out.println(sub);
+            if(sol.function(sub)==true){map2.put(sub,sub.length()*(map.get(carray[0])));}
+          
+         }
+         }
+        //preprocessing steps
+        
+            
+        
+       
+        for(i= 0; i < n; i++){
+            int x = in.nextInt();
+            // your code goes here
+            if(map2.containsValue(x)==true){System.out.println("Yes");}
+            else{System.out.println("No");}
+        }
+    
+    }}
+
