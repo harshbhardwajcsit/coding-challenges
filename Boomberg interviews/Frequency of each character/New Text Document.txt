@@ -1,0 +1,30 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		 Map<Character,Integer> map = new LinkedHashMap<Character,Integer>();
+         Scanner sc=new Scanner(System.in);
+         String string=sc.next();
+         char a[]=string.toCharArray();
+         
+         for(int i=0;i<a.length;i++){
+         	if(map.containsKey(a[i])==false){map.put(a[i],1);}
+         	else{map.put(a[i],map.get(a[i])+1);}
+         	
+         }
+String st="";
+for (Map.Entry<Character,Integer> entry : map.entrySet()) {
+    Character key = entry.getKey();
+    Integer value = entry.getValue();
+    // ...
+    System.out.println(value+""+key);
+}
+	}
+}
