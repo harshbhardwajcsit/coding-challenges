@@ -1,0 +1,48 @@
+
+
+import java.util.*;
+import java.lang.*;
+public class SnakeLadder {
+
+  static Map<Integer,Integer> map=new HashMap<Integer,Integer>();
+   int FindPath(int pos){
+
+if(pos<100){
+   return FindCounter(pos+1)+FindCounter(pos+2)+FindCounter(pos+3)+FindCounter(pos+4)+FindCounter(pos+5)+FindCounter(pos+6);
+   //we are rolling the dise here
+}
+else{ return 0;}
+   }
+
+
+   int  FindCounter(int position){
+       
+   if(position==100){return 1;}
+   else {if(map.containsKey(position)==true){return FindPath(map.get(position));} // if ladder or snakes encountered
+   else{
+       return FindPath(position);}
+   } 
+   }
+    public static void main(String[] args) {
+        SnakeLadder solution=new SnakeLadder();
+
+        //adding snakes and ladder with their begin and end points as key and value pairs
+
+
+        /////// adding ladder  ////////////
+        map.put(5,65);
+        map.put(13,59);
+        map.put(37,55);
+        map.put(68,96);
+
+        ///////   adding snakes  ///////////
+        map.put(24,8);
+        map.put(85,19);
+        map.put(63,58);
+        map.put(93,36);
+        int total_paths=solution.FindPath(1);
+        System.out.println(total_paths); //begin the game
+      
+    }
+
+}
