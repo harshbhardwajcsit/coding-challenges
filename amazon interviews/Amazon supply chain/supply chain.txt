@@ -1,0 +1,14 @@
+
+1-Arrange warehouse W1,W2,W3.....Wn and destinations D1,D2,D3.....Dn in a directed graph where cost &modes of transport is the weight of edges connecting the given warehouses and destination facilities available from warehouses
+
+2- manage product --> destination in a hashtable e.g
+P1-->D1
+P2-->D2 
+P3-->D3
+
+3-now manage list of products available in each warehouse respectively 
+for eg, W1={PI,P3}
+W2={PI,P2}
+W3={P2,P3}
+
+4-now when delivering each product we have to select its destination which can be easily available from the warehouse where the product is present including the cheaper mode of transport ,plus product can be reached within estimated delivery period
