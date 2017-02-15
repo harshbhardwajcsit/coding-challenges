@@ -1,0 +1,40 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	void get(int arr[]){
+		int len=arr.length;
+		System.out.println(len);
+		int counter=0;
+		if(arr[len-1]-arr[0]+1==len){System.out.println("case 1");}
+		else{
+              for(int j=0;j<len-3;j++){
+              	if(arr[j]+arr[j+1]==arr[j+2]){counter++;}
+              }
+              if(counter==len-2){System.out.println("case 2");}
+              else{System.out.println("case 3");}
+			
+		}
+		
+		
+	}
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+	    int N=sc.nextInt();
+	    int a[]=new int[N];
+	    for(int i=0;i<N;i++){
+	    	a[i]=sc.nextInt();
+	    }
+	    
+	    Ideone i=new Ideone();
+	    i.get(a);
+		
+		
+	}
+}
