@@ -1,0 +1,47 @@
+ 
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+ 
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		TreeMap<Integer,Integer> tmap=new TreeMap<Integer,Integer>();
+		int N=sc.nextInt();
+		int arr[]=new int[N];
+		int i,counter=1;
+		for(i=0;i<N;i++){
+			arr[i]=sc.nextInt();
+		}
+ 
+		for(i=0;i<N-1;i++){
+			if(arr[i]+1==arr[i+1]){counter++;}
+			else{
+				tmap.put(counter,counter);
+				counter=1;
+			}
+ 
+ 
+		}
+		System.out.println(tmap.lastKey().toString());
+ 
+	}
+}
+
+
+
+***************** results**********************
+
+input
+
+8
+
+100 200 1 2 3 7 9 10
+
+output
+
+3
+
