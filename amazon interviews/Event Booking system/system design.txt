@@ -1,0 +1,10 @@
+So a event booking system ,ca
+First we need a the list of recently posted new events ....for this we can use treemap of events saved with the posted time ...as the treemap is sorted, the recently posted events always appears first , We can use stack too.
+
+Secondly for storing booked events by the users , we can Queue , because the event with the closest date should appear first .
+
+
+To make system more friendly for the users we can classify the events on the basis of their categories/Themes/nearby locations.
+
+
+We can use preference based recommendation in system too, so the users get more events of the same category or if someone missed any event then system will recommends any similar event in future to the user.
