@@ -1,0 +1,19 @@
+please improve my answer if i missed anything or stated something wrong 
+
+
+So a ticket booking system 
+
+ticket booking applications use a an Api for manage data of seat booked/free, show timing etc in real time and always sync with the databases the Theaters are using.
+
+so when ever a user booked a ticket for a specific theater from an app , the information is updated to the theaters db and the same case happen when any user booked tickets physically through theaters, this is how you can see seats marked booked or free
+
+using users location, app can recommend nearby theaters to the user on the basis of the movie he wants to see and where seats are available we can use treemap here to sort acc to the tickets available .
+
+Both Sql and No-sql will be used , No sql will used to store information about theater like PVR/INOX , facility available , Movies running in theaters and other similar tags
+
+
+also the db would be like { "userID" :"155366",{"theaterID":"67q4q99","MovieId":"63geud3","TicketId":{ "SeatNUM":[ 143,172,183,273.... ]  } }}
+
+To maintain concurrency , SQL transaction db could used , when users book the tickets on the same time period , apps allow them to complete the payment within a time counter, followed by the steps in transactional db, the user that complete the process first would get the tickets, there are also some waiting queue sort of concept
+
+
