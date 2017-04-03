@@ -1,0 +1,39 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int test=sc.nextInt();
+		while(test>0){
+			int n=sc.nextInt();
+			int R=sc.nextInt();
+			int count=0,i;
+			int a[]=new int[n];
+			for(i=0;i<n;i++){
+				a[i]=sc.nextInt();
+			}
+			int sum=0;
+		       for(i=0;i<n;i++){
+		       	sum=sum+a[i];
+				if(a[i]/R>=1){
+					int r=a[i]/R;
+					count=count+r;
+					
+				}
+			}
+			if(sum/R>=n){ System.out.println(count);}
+			else{ System.out.println("-1");}
+			
+			
+			
+			test--;
+		}
+	}
+}
