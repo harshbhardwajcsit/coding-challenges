@@ -1,0 +1,53 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int test=sc.nextInt();
+		while(test>0){
+		String s1,s2,s3,s4;
+		s1=sc.next();
+		s2=sc.next();
+		s3=sc.next();
+		s4=sc.next();
+		Map<String,String> map=new HashMap<String,String>();
+		map.put(s1,s1);
+		map.put(s2,s2);
+		map.put(s3,s3);
+		map.put(s4,s4);
+		
+		
+		
+		
+		String s11,s12,s13,s14;
+		s11=sc.next();
+		s12=sc.next();
+		s13=sc.next();
+		s14=sc.next();
+		Map<String,String> map1=new HashMap<String,String>();
+		map1.put(s11,s11);
+		map1.put(s12,s12);
+		map1.put(s13,s13);
+		map1.put(s14,s14);
+	  int count=0;	
+		for (Map.Entry<String, String> entry : map1.entrySet()) {
+         String key = entry.getKey();
+          if(map.containsKey(key)==true)
+          {count++;}
+    
+}
+
+  if(count>=2){System.out.println("similar");}
+  else{System.out.println("dissimilar");}
+		
+		test--;
+		}
+	}
+}
