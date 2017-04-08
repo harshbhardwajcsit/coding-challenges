@@ -9,8 +9,9 @@ class Ideone
 { 
 	int flag,c=0,crr,i;
 	int func(char a[]){
+		
 		flag=0;
-		for(i=0;i<a.length-1;i++){
+		for(i=0;i<=a.length-2;i++){
 			
 			if(a[i]=='1'&&a[i+1]=='0'){
 				c++;
@@ -19,13 +20,14 @@ class Ideone
 				crr=i;
 			}
 			
-			if(a[i]=='0'&&a[i+1]=='1'||a[i]=='0'&&i==a.length-1){
+			if(a[i]=='0'&&a[i+1]=='1'||a[i]=='0'&&i==a.length-2){
 				
 				
 				if(flag==1){
 					
 					a[i]='1';
 					c=c+(i-crr);
+				  
 					func(a);
 					
 				}
@@ -40,12 +42,15 @@ class Ideone
 	public static void main (String[] args) throws java.lang.Exception
 	{
 		Scanner sc=new Scanner(System.in);
+        int test=sc.nextInt();
+        while(test>0){
 		String st=sc.next();
-		
+		st=st+'k';
 		char arr[]=st.toCharArray();
 		Ideone id=new Ideone();
 		System.out.println(id.func(arr));
-		
+            test--;
+        }
 		
 	}
 }
