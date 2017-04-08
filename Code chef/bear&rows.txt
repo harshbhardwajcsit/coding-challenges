@@ -1,0 +1,51 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{ 
+	int flag,c=0,crr,i;
+	int func(char a[]){
+		flag=0;
+		for(i=0;i<a.length-1;i++){
+			
+			if(a[i]=='1'&&a[i+1]=='0'){
+				c++;
+				a[i]='0';
+				flag=1;
+				crr=i;
+			}
+			
+			if(a[i]=='0'&&a[i+1]=='1'||a[i]=='0'&&i==a.length-1){
+				
+				
+				if(flag==1){
+					
+					a[i]='1';
+					c=c+(i-crr);
+					func(a);
+					
+				}
+			}
+			
+		}
+		
+		return c;
+	}
+	
+	
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		String st=sc.next();
+		
+		char arr[]=st.toCharArray();
+		Ideone id=new Ideone();
+		System.out.println(id.func(arr));
+		
+		
+	}
+}
