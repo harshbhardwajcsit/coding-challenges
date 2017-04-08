@@ -1,0 +1,45 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{ 
+
+	
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+        int test=sc.nextInt();
+        while(test>0){
+        int N=sc.nextInt();
+        int q=N;    
+		int p=sc.nextInt();
+        int g=0,r=0 ;   
+            for(int e=1;e<=N;e++){
+                
+                int n=sc.nextInt();
+                for(int l=1;l<=n;l++){
+                    
+                    int k=sc.nextInt();
+                    if(k==p){if(g!=1){g=1;r=e;}
+                            else{g=1;}} 
+                   
+                }
+           
+        }
+            N=q;
+            if(g!=1){System.out.println("sad");}
+            else{
+             if(r==N){System.out.println("all");}   
+               else{System.out.println("some");}
+                
+            }
+            
+               test--;
+        }
+		
+	}
+}
