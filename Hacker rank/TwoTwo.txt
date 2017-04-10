@@ -1,0 +1,44 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	boolean p(long long x)
+{
+    return (x != 0) && ((x & (x - 1)) == 0);
+}
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Ideone id=new Ideone();
+		Scanner sc=new Scanner(System.in);
+		int test=sc.nextInt();
+		while(test>0){
+		int c=0;
+		String string=sc.next();
+            int n=string.length();
+		for(int i=0;i<=n;i++){
+			for(int j=i+1;j<=n;j++){
+				String ss=string.substring(i,j);
+                if(ss.charAt(0)!='0'){
+				long val=Long.parseLong(ss);
+             
+				if(id.p(val)==true){
+		            c++;	
+                   
+				}
+				
+                }
+            }}
+            
+            
+            
+            
+            System.out.println(c);
+		test--;
+		}
+	}
+}
