@@ -1,0 +1,53 @@
+import java.util.*;
+ 
+public class List {
+    
+    int function(int a,int b,int val,int arr[]){
+        int count=1,result=0,j;
+        arr[b+1]=-1;
+        j=a;
+        while(j<=b){
+            if(arr[j]==arr[j+1]){count++;} 
+            else{ 
+                 
+                      if(count>=val){
+                          
+                           result++;
+                      }   
+                      count=1;}
+            j++;
+        }    
+    
+        return result;
+        
+    }
+    
+    public static void main(String[] args) {
+         List list=new List();
+        Scanner sc=new Scanner(System.in);
+        int test=sc.nextInt();
+        while(test>0){
+            int n=sc.nextInt();
+            int q=sc.nextInt();
+            int a[]=new int[n];
+            for(int i=0;i<n;i++){
+                a[i]=sc.nextInt();
+            }
+            while(q>0){
+                int l,h,num;
+                l=sc.nextInt();
+                h=sc.nextInt();
+                num=sc.nextInt();
+                System.out.println(list.function(l-1,h-1,num,a));
+                
+                
+                
+                q--;
+            }
+            
+       test--   ;  
+        }
+       
+    }
+ 
+}
