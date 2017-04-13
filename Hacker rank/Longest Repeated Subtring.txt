@@ -1,0 +1,67 @@
+import java.util.*;
+import java.util.Map;
+import java.util.HashMap;
+
+class A{
+    
+    
+    static int beg=0,end;
+    
+    static Map<String,Integer> map=new HashMap<String,Integer>();
+    void get(String string){
+        
+        while(beg<=end){
+            if(map.containsKey(string.substring(beg,end))==false){map.put(string.substring(beg,end),1);}
+            else{map.put(string.substring(beg,end),map.get(string.substring(beg,end))+1);}
+            get(string.substring(beg+1,end-1));
+            get(string.substring(beg,end-1));
+            get(string.substring(beg+1,end));
+            
+        }
+        
+        
+    }
+    
+    
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        A id=new A();
+        String st=sc.next();
+        int error=0;
+         char a[]=st.toCharArray();
+        end=a.length;
+        for(int i=0;i<a.length;i++){
+            if(a[i]>=97&&a[i]<=122){}
+            else{error=1;}
+            
+        }
+        if(error==1){
+            System.out.println("");
+        }
+        
+        else  if(st.length()>50){
+            System.out.println("");
+        }
+        else{
+            id.get(st);
+            
+        }
+        
+        TreeMap<Integer,String> tmap=new TreeMap<Integer,String>();
+        for(Map.Entry<String,Integer> entry: map.entrySet()){
+            
+            String key=entry.getKey();
+            Integer value=entry.getValue();
+            if(value>=2){
+                tmap.put(key.length(),key);
+                
+            }
+            
+        }
+        
+        System.out.println(tmap.lastKey());
+        
+        
+        
+    }
+}
