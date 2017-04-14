@@ -1,0 +1,56 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    String result="";
+    String Get(String string){
+        if(string.length()==0){
+            result="Empty string";
+        }
+        else if(string.length()==1){result=string;}
+        else{
+          char a[]=string.toCharArray();  
+          StringBuilder stb=new StringBuilder(string);
+          for(int i=0;i<=a.length-2;i++){
+           if(a[i]==a[i+1]){
+               
+               stb=stb.deleteCharAt(i);
+               stb=stb.deleteCharAt(i);
+                System.out.println(stb);
+                Get(stb.toString());   
+           }   
+          }  
+          result=stb.toString();  
+            
+        }
+      return result;
+    }
+    
+
+    public static void main(String[] args) {
+     Scanner sc=new Scanner(System.in);
+        String s=sc.next();
+        Solution sol=new Solution();
+        System.out.println(sol.Get(s));
+    }
+}
+
+
+
+input
+
+aaabccddd
+baab
+aa
+aab
+
+
+output
+
+abd
+Empty string
+Empty string
+b
