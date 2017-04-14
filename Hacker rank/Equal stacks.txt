@@ -1,0 +1,61 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n1 = in.nextInt();
+        int n2 = in.nextInt();
+        int n3 = in.nextInt();
+        int h1[] = new int[n1];int i;
+        for(i=0; i < n1; i++){
+            h1[i] = in.nextInt();
+        }
+        int h2[] = new int[n2];
+        for( i=0; i < n2; i++){
+            h2[i] = in.nextInt();
+        }
+        int h3[] = new int[n3];
+        for(i=0; i < n3; i++){
+            h3[i] = in.nextInt();
+        }
+        
+        Map<Integer,Integer> map1=new HashMap<Integer,Integer>();
+        int sum1=0;
+          for(i=n1-1; i >=0; i--){
+            sum1=sum1+h1[i];
+              map1.put(sum1,sum1);
+        }
+         Map<Integer,Integer> map2=new HashMap<Integer,Integer>();
+        int sum2=0;
+          for(i=n2-1; i >=0; i--){
+            sum2=sum2+h2[i];
+              map2.put(sum2,sum2);
+        }
+         Map<Integer,Integer> map3=new HashMap<Integer,Integer>();
+        int sum3=0;
+          for(i=n3-1; i >=0; i--){
+            sum3=sum3+h3[i];
+              map3.put(sum3,sum3);
+        }
+        
+        TreeMap<Integer,Integer> tmap=new TreeMap<Integer,Integer>();
+        for (Map.Entry<Integer, Integer> entry : map1.entrySet()) {
+        int key = entry.getKey();
+            if(map2.containsKey(key)==true&&map3.containsKey(key)==true){tmap.put(key,key);}
+    
+    
+}
+        if(tmap.size()!=0){
+        
+            System.out.println(tmap.lastKey());}
+        else{System.out.println(0);}
+        
+    }
+}
+
+
