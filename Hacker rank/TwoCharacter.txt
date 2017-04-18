@@ -1,0 +1,71 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    
+    int checkValid(String str){
+        int result=1;
+        char ar[]=str.toCharArray();
+        for(int j=0;j<ar.length-1;j++){if(ar[j]==ar[j+1]){result=0;}}
+        
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Solution sol=new Solution();
+        Scanner in = new Scanner(System.in);
+        int len = in.nextInt();
+        String s = in.next();
+        
+        Map<Character,Character> map=new HashMap<Character,Character>();
+        char a[]=s.toCharArray();
+        int i,j;
+        for(i=0;i<a.length;i++){map.put(a[i],a[i]);}
+        if(map.size()==1){System.out.println("0");}
+        else{
+        int dist[]=new int[map.size()];
+        int k=0;
+        for(Map.Entry<Character,Character> entry : map.entrySet()){
+            Character key=entry.getKey();
+            dist[k]=key;
+            k++;  
+        }
+         TreeMap<Integer,String> tmap=new TreeMap<Integer,String>();
+        
+        for(i=0;i<dist.length-1;i++){
+            for(j=i+1;j<dist.length;j++){
+                String snew="";
+                for(int p=0;p<a.length;p++){if(a[p]==dist[i]||a[p]==dist[j]){snew=snew+a[p];}}
+                //System.out.println(snew);
+                if(sol.checkValid(snew)==1){tmap.put(snew.length(),snew);}
+                
+            }
+            
+        }
+        
+        if(tmap.size()==0){
+        System.out.println("0");}
+            else{System.out.println(tmap.lastKey());}}
+        
+        
+        
+        
+    }
+}
+
+input********
+
+1000
+ucwtvajqreigbqszaukfieswtlhdvwhvlzsxswzbfcropnxlektloohamginpsxeooqsnlbaglmhiyednqibglmodhylweshcquhvxtqclqbvmptqglungavqccwlmhhogdlrzufeccpdmwnnrmgcxqlwdvtqqbicqbfgldxgdkkyvpzvlsncotyhwqeilzmguhpyrazsbsfvkzjzabcvrqwqndoqgztxtlpbfjcvbsplvbwlmmuyyqhiknybizxjzmrjvrtrsshgbiidrrcbapdwsxzlzlmcwrtvngokdvywjglorficgxqvatsbnvplqinopcrttpseweeekbypkvdanbcofvziojhpzhzaltgqvpstrrxfrjhdsdhrtwqzcqneicivppiquubsrvvbrtmwyhhqailyaaypfeusuefgqmbxmfadxtznfxfdtqggxeorjpvtmixlykezahzhxjbovglxggwxfcyrfxpefzolryernhmebhvcidocnknucdldlqtfvcoecygvejdrjnfrfrbqagcbellxnodvlzieerarmzrzfrdgxuhcfuwxvjlqmlflciotcylyyeywgtqgmbwghxaqesjgisuarjhqldcvxgyqzkwpecbapxxhevazufbgkrrzgxcnuuqdzzizbethncfhuvfjgccikzkqnksexzdvbhabdbrdspuygmhvmlbsptzejjtqnbdjpnhzamqvwliukpxxvkspgqxkedqcaaqwhglfiteiqnweyyfwswrkitadrayaqpllnnfatktsdlwtggzvjpefjglqbvpkpgtwarolbmsfbqxjsznmlmdohxwuxlasppsmqfcmfggxvimymnyqqoxdljdcyqlleuhfbemkwyysykdnjcazwrjhqpsclzhezqzghsmuzrapkxccniagkzfkntzrufvgqhbkfgyajwczsihigazrwvkdzequtqabdqqixjqudvdkvydknuamcxr
+
+10
+beabeefeab
+
+output********
+
+0
+5
+
