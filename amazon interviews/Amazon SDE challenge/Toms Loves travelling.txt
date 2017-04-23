@@ -1,0 +1,75 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+// Class name should be "Source",
+// otherwise solution won't be accepted
+public class Source {
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        int test;  
+        test = sc.nextInt();
+        while(test>0){
+            int n=sc.nextInt();//vertex
+            int m=sc.nextInt();//path
+            Map<Integer,Integer> map=new HashMap<Integer,Integer>();
+            while(m>0){
+                  int v=sc.nextInt();//vertex
+                  int u=sc.nextInt();
+                  if(map.containsKey(v)==false){map.put(v,1);}else{
+                      map.put(v,map.get(v)+1);
+                  }
+                   if(map.containsKey(u)==false){map.put(u,1);}else{
+                      map.put(u,map.get(u)+1);
+                  }
+                m--;
+            }
+            int result=1;
+            for(Map.Entry<Integer,Integer> entry: map.entrySet()){
+                Integer val=entry.getValue();
+                if(val%2!=0){result=0;}
+                
+            }
+            
+            
+            
+            if(map.size()<n){ System.out.println("NO");}
+            else{
+                if(result==0){System.out.println("NO");}
+                else{System.out.println("YES");}
+            }
+            
+            
+            test--;
+        }
+       
+   }
+}
+
+
+input 
+
+1
+2 3
+1 1
+1 2
+1 2
+
+output
+
+YES
+
+
+input
+1
+2 2
+1 1 
+1 2
+
+output
+
+NO
+
