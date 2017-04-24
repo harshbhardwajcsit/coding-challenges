@@ -1,0 +1,55 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+   static int count;
+
+    static int howManyCollisions(char a[]){
+        
+        
+        for(int i=0;i<a.length-1;i++){
+            if(a[i]=='r'&&a[i+1]=='l'){count=count+2; a[i]='s';a[i+1]='s'; howManyCollisions(a);}
+            if(a[i]=='r'&&a[i+1]=='d'){count=count+1; a[i]='s';a[i+1]='s'; howManyCollisions(a);}
+            if(a[i]=='r'&&a[i+1]=='s'){count=count+1; a[i]='s';a[i+1]='s'; howManyCollisions(a);}
+            if(a[i]=='d'&&a[i+1]=='l'){count=count+1; a[i]='s';a[i+1]='s'; howManyCollisions(a);}
+            if(a[i]=='s'&&a[i+1]=='l'){count=count+1; a[i]='s';a[i+1]='s'; howManyCollisions(a);}
+                  
+        }
+        
+        return count;
+        
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int q = in.nextInt();
+        for(int i = 0; i < q; i++){
+            String s = in.next();
+            char arr[]=s.toCharArray();
+            count=0;
+            int result = howManyCollisions(arr);
+            System.out.println(result);
+        }
+    }
+}
+
+
+
+input 
+
+5
+r
+lrrl
+rrrll
+rrdlldrr
+rrrdllrllrrl
+
+output
+0
+3
+5
+4
+11
