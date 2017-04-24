@@ -1,0 +1,49 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static int shortestTightArray(int a, int b, int c){
+        // Complete this function
+        int length=3;
+        int ar[]=new int[3];
+        ar[0]=a;
+        ar[1]=b;
+        ar[2]=c;
+        for(int i=0;i<2;i++){
+            if(Math.abs(ar[i]-ar[i+1])>1){length=length+Math.abs(ar[i]-ar[i+1])-1;}
+            if(Math.abs(ar[i]-ar[i+1])==0){length--;}
+            
+        }
+        
+        return length;
+        
+        
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int a = in.nextInt();
+        int b = in.nextInt();
+        int c = in.nextInt();
+        int result = shortestTightArray(a, b, c);
+        System.out.println(result);
+    }
+}
+
+
+
+inputs
+
+5 7 11
+
+3 1 2
+
+output
+
+7
+
+4
