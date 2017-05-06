@@ -1,0 +1,51 @@
+/*
+ * Complete the function below.
+ */
+
+    static boolean doesStringHasPattern(String givenString) {
+		boolean doesStringHasPattern=false;
+        int n=givenString.length();
+        int result=0;
+        if(n%2==0){
+            
+            int p=n/2;
+            
+            while(p>0){
+                String st=givenString.substring(0,p);
+                int k=n/p;
+               // System.out.println("st "+st);
+                 // System.out.println("k "+k);
+                String sp="";
+                for(int i=1;i<=k;i++){sp=sp+st;}
+               // System.out.println("sp "+sp);
+                if(sp.equals(givenString)==true){result=1;break;}
+                p=p-2;
+            }
+            
+        }
+        else{
+            int p=n/2;
+         
+           while(p>0){
+                String st=givenString.substring(0,p);
+                int k=n/p;
+               // System.out.println("st "+st);
+                 // System.out.println("k "+k);
+                String sp="";
+                for(int i=1;i<=k;i++){sp=sp+st;}
+                //System.out.println("sp "+sp);
+                if(sp.equals(givenString)==true){result=1;break;}
+                p=p-1;
+            }
+            
+            
+            
+        }
+        if(result==1){
+            doesStringHasPattern=true;
+        }
+        
+      
+		return doesStringHasPattern;
+    }
+
