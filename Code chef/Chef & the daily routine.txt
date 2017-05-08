@@ -1,0 +1,58 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	 Scanner sc=new Scanner(System.in);
+	 int test=sc.nextInt();
+	 Map<Character,Integer> map=new HashMap<Character,Integer>();
+	 map.put('C',3);map.put('E',2);map.put('S',1);
+	 while(test>0){
+	 	String st=sc.next();
+	 	char a[]=st.toCharArray();
+	 	int n=a.length;
+	 	int i=1;
+	 	int val;
+	 	int curr;
+	 	int r=1;
+	 	while(i<n){
+	 		curr=map.get(a[i]);
+	 		val=map.get(a[i-1]);
+	 		if(val>=curr){}
+	 		else{
+	 			r=0;
+	 		}
+	 		
+	 		
+	 		i++;
+	 	}
+	 	
+	 	
+	 	if(r==1){System.out.println("yes");}
+	 	else{System.out.println("no");}
+	 	test--;
+	 }
+	 
+	}
+}
+
+
+input
+4
+ECCC
+ESSS
+CSS
+ECS
+
+
+output
+no
+yes
+yes
+no
