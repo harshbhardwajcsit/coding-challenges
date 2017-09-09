@@ -1,0 +1,39 @@
+/* package whatever; // don't place package name! */
+ 
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+ 
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int test=sc.nextInt();
+		while(test>0){
+		int N=sc.nextInt();
+		int a[]=new int[N];
+		for(int k=0;k<N;k++){
+			a[k]=sc.nextInt();
+		}
+		TreeMap<Integer,Integer> tmp=new TreeMap<Integer,Integer>();
+		for(int i=1;i<=N;i++){
+			int ps=0,ss=0,ts=0,j;
+			for(j=0;j<=i-1;j++){
+				ps=ps+a[j];
+			}
+			for(j=N-(N-i+1);j<=N-1;j++){
+				ss=ss+a[j];
+			}
+			ts=ps+ss;
+			if(tmp.containsKey(ts)==false){tmp.put(ts,i);}
+			else{tmp.put(ts,Math.min(tmp.get(ts),i));}
+			
+			
+		}
+		System.out.println(tmp.get(tmp.firstKey()));
+		test--;
+	}
+	}
+} 
