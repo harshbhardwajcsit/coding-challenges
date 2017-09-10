@@ -1,0 +1,34 @@
+package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+	            int a=sc.nextInt();
+	            String ste=Integer.toString(a);
+	            TreeMap<Integer,String> tmp=new TreeMap<Integer,String>();
+	            char ar[]=ste.toCharArray();
+	            for(int i=0;i<(ar.length)-1;i++){
+	            
+	                 for(int j=i+1;j<ar.length;j++){
+	                 	
+	                 	
+	                 	String st=ar[i]+ar[j];
+	                 	String str=ar[j]+ar[i];
+	                 	int st1=Integer.parseInt(st);
+	                 	int st2=Integer.parseInt(str);
+	                 	if(st1>=65&&st1<=90){tmp.put(st1,String.valueOf(st1));}
+	                 	if(st2>=65&&st2<=90){tmp.put(st2,String.valueOf(st2));}
+	                
+	                 }	
+	            	
+	            }
+	            System.out.println(tmp);
+	}
+}
