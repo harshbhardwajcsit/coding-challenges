@@ -1,0 +1,73 @@
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{ 
+
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+        int test=sc.nextInt();
+       
+        Map<String,Integer> map=new HashMap<String,Integer>();
+        map.put("mon",0);
+        map.put("tues",1);
+        map.put("wed",2);
+        map.put("thurs",3);
+        map.put("fri",4);
+        map.put("sat",5);
+        map.put("sun",6);
+        
+        
+        while(test>0){
+        int W=sc.nextInt();
+        String S=sc.next();
+        int i;
+        int a=map.get(S);
+            
+            if(W==28){
+               for(i=0;i<7;i++){
+                   System.out.print("4 ");
+               }
+                
+            }
+            
+             if(W==29){
+                 for(i=0;i<7;i++){
+                 if(i==a){System.out.print("5 ");}   
+                     else{
+                     System.out.print("4 ");}
+               }
+            }
+            
+            
+            if(W==30){
+                 for(i=0;i<7;i++){
+                 if(i==a||i==a+1){System.out.print("5 ");}   
+                     else{
+                     System.out.print("4 ");}
+               }
+            }
+            if(W==31){
+                 for(i=0;i<7;i++){
+                   if(i==a||i==a+1||i==a+2){System.out.print("5 ");} 
+                     else{
+                     System.out.print("4 ");}
+               }
+               }
+            
+            
+            
+             System.out.println(" ");
+            
+            test--;
+        }
+        
+
+    }
+	
+	}
+    
