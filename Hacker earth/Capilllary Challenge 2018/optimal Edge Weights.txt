@@ -1,0 +1,28 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner sc=new Scanner(System.in);
+        int N=sc.nextInt();
+        int ran=sc.nextInt();
+        int test=N;
+        int i;
+        while(test>0){
+            int roads[]=new int[2];
+            for(i=0;i<2;i++){
+              roads[i]=sc.nextInt();  
+            }
+            test--;
+        }
+        int tax_amnt[]=new int[N];
+        int sum=0;
+         for(i=0;i<N;i++){
+              tax_amnt[i]=sc.nextInt();
+              sum=sum+2*tax_amnt[i];
+            }
+            System.out.println(sum);
+     
+    }
+}

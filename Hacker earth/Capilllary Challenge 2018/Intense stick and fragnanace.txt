@@ -1,0 +1,63 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner sc=new Scanner(System.in);
+        int x11=sc.nextInt();
+        int y11=sc.nextInt();
+        int x12=sc.nextInt();
+        int y12=sc.nextInt();
+        int corners=sc.nextInt();
+        int ax[]=new int[corners];
+        int ay[]=new int[corners];
+        int i,j;
+        for(i=0;i<corners;i++){
+            ax[i]=sc.nextInt();
+        }
+        
+        for(i=0;i<corners;i++){
+            ay[i]=sc.nextInt();
+        }
+        
+        int query=sc.nextInt();
+        int que[]=new int[query];
+        for(i=0;i<query;i++){
+            que[i]=sc.nextInt();
+        }
+        
+        double dis=Math.sqrt(Math.pow(x12-x11,2)+Math.pow(y12-y11,2));
+        double time=Math.ceil(dis/2);
+        
+        
+        for(i=0;i<query;i++){
+            if(que[i]<time){
+                System.out.print("0 ");
+            }
+            else{
+         int count=0;
+         for(j=0;j<corners;j++){
+             double cal_dis1=Math.sqrt(Math.pow(x11-ax[j],2)+Math.pow(y11-ay[j],2));
+            // System.out.println("dis from stick 1 :"+cal_dis1);
+             double cal_dis2=Math.sqrt(Math.pow(x12-ax[j],2)+Math.pow(y12-ay[j],2));
+             //System.out.println("dis from stick 2 :"+cal_dis2);
+               if(cal_dis2<=que[i]&&cal_dis1<=que[i]){
+                count++;
+            }
+            }
+            
+          System.out.print(count+" ");  
+            
+        
+            
+          
+        }
+        
+        
+        
+        
+        } 
+
+    }
+}

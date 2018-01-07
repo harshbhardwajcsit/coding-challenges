@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* package whatever; // don't place package name! */
  
 import java.util.*;
@@ -47,4 +48,55 @@ class Ideone
 			test--;
 		}
 	}
+=======
+/* package whatever; // don't place package name! */
+ 
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+ 
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int test=sc.nextInt();
+		while(test>0){
+		Map<Integer,Integer> map=new HashMap<Integer,Integer>();
+	            int arr[]=new int[4];
+	            int i;
+	    
+	    for(i=0;i<4;i++){
+	    	
+	    	arr[i]=sc.nextInt();
+	    	if(map.containsKey(arr[i])==true){map.put(arr[i],map.get(arr[i])+1);}
+	    	else{map.put(arr[i],1);}
+	    }
+	    String result="NO";
+	    if(map.size()>2){}
+	    if(map.size()==1){
+	    	for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+                         int key = entry.getKey();
+                         int value = entry.getValue();
+                         if(key!=0&&value==4){result="YES";}
+ 
+                    }
+	    }
+	    if(map.size()==2){
+	           for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+                         int key = entry.getKey();
+                         int value = entry.getValue();
+                         if(key==0){result="NO";break;}
+                         else{if(value!=2){result="NO";break;}
+                         else{result="YES";}}
+ 
+                    }
+	    	
+	    }
+	    System.out.println(result);
+			test--;
+		}
+	}
+>>>>>>> 79de38a298a2b8cadd26e57f6e4ed7e9c753fed3
 } 
