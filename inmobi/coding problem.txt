@@ -1,0 +1,46 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+// Class name should be "Source",
+// otherwise solution won't be accepted
+ class Source {
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        // Declare the variable
+        int N,P;
+        N = sc.nextInt();
+        P=sc.nextInt();
+        int a[]=new int[N];
+        int i,j;
+        for(i=0;i<N;i++){
+            a[i]=sc.nextInt();
+        }
+        
+       TreeMap<Integer,Integer> tmap=new TreeMap<Integer,Integer>();
+        for(i=0;i<N-1;i++){
+            for(j=i+1;j<N;j++){
+                int p=Math.abs(a[i]-a[j]);
+                tmap.put(p,p);
+                
+            }
+            
+        }
+         System.out.println(tmap);
+   int c=1;       
+for (Map.Entry<Integer, Integer> entry : tmap.entrySet()) {
+	if(c==P){
+    	Integer key = entry.getKey();
+		System.out.println(key);
+		break;
+	}
+   c++;
+}
+        
+ 
+   }
+}
