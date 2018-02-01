@@ -1,0 +1,39 @@
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{ 
+    public int getSum(int a,int sum){
+        
+        while(a>0){
+            int r=a%10;
+            sum=sum+r;
+            a=a/10;
+        }
+        
+        return sum;
+        
+    }
+
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+        Ideone id=new Ideone();
+        int result=id.getSum(a,0);
+        if(result>9){
+            id.getSum(result,0);
+            
+        }
+        else{
+            System.out.println(result);
+        }
+        
+      
+
+    }
+	
+	}
+    

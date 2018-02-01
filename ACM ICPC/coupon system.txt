@@ -1,0 +1,52 @@
+ 
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+ 
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int test=sc.nextInt();
+		while(test>0){
+			int n=sc.nextInt();
+			TreeMap<Integer,Integer> cost_map=new TreeMap<Integer,Integer>();
+			TreeMap<Integer,Integer> city_map=new TreeMap<Integer,Integer>();
+			while(n>0){
+				int a[]=new int[3];
+				for(int i=0;i<3;i++){
+					a[i]=sc.nextInt();
+				}
+				if(cost_map.containsKey(a[1])==true){
+					if(a[2]>cost_map.get(a[1])){
+						cost_map.put(a[1],a[2]);
+						city_map.put(a[1],a[0]);
+					}
+					if(a[2]==cost_map.get(a[1])){
+						if(city_map.get(a[1])>a[0]){
+							city_map.put(a[1],a[0]);
+						}
+					}
+					
+				}
+				else{cost_map.put(a[1],a[2]);
+					city_map.put(a[1],a[0]);
+				}
+				
+				n--;
+			}
+			
+			for (Map.Entry<Integer, Integer> entry1 : cost_map.entrySet()) {
+			     int key=entry1.getKey();
+			     int value=entry1.getValue();
+			     int svalue=city_map.get(key);
+			     System.out.println(value+" "+svalue);
+			     
+ 
+			}
+			test--;
+		}
+	}
+} 

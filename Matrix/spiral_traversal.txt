@@ -1,0 +1,99 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public int getfirsthalfSum(int x,int arr[],int checkpoint){
+		int Firstsum=0;
+		Set<Integer> set=new HashSet<Integer>();
+		for(int k=0;k<=checkpoint;k++){
+			if(arr[k]==x){}
+			else{       
+				set.add(arr[k]);
+				Firstsum=Firstsum+arr[k];}
+		}
+		System.out.println("set :"+set);
+		return Firstsum;
+		
+	}
+	
+	public int getSecondHalfSum(int x,int arr[],int checkpoint){
+		int Secondsum=0;
+		Set<Integer> set2=new HashSet<Integer>();
+		for(int r=checkpoint;r<arr.length;r++){
+			if(arr[r]==x){}
+			else{
+				set2.add(arr[r]);
+				Secondsum=Secondsum+arr[r];}
+		}
+		System.out.println("set2 :"+set2);
+		return Secondsum;
+	}
+	
+	public void getResult(int x,int arr[]){
+		boolean result=false;
+		int breakpoint=0;
+		for(int j=0;j<arr.length-1;j++){
+			System.out.println("checkpoint "+ j);
+			//System.out.println("firstsum "+getfirsthalfSum(x,arr,j));
+			//System.out.println("secondsum "+getSecondHalfSum(x,arr,j+1));
+			
+			if(getfirsthalfSum(x,arr,j)==getSecondHalfSum(x,arr,j+1)){
+				result=true;
+				breakpoint=j;
+				break;
+			}
+			
+		}
+		System.out.println("result"+result);
+		Map<Integer,Integer> map1=new HashMap<Integer,Integer>();
+		Map<Integer,Integer> map2=new HashMap<Integer,Integer>();
+		
+		if(result==true){
+		System.out.println("breakpoint "+breakpoint);
+		int start;
+		for( start=0;start<=breakpoint;start++){
+			map1.put(arr[start],start+1);
+		}
+		System.out.println("map1 "+map1);
+		for( start=breakpoint+1;start<arr.length;start++){
+			map2.put(arr[start],start+1);
+		}
+		System.out.println("map2 "+map2);
+		
+		char res_arr[]=new char[arr.length];
+		for(start=0;start<arr.length;start++){
+		  if(map1.containsValue(start+1)==true){res_arr[start]='0';}
+		  if(map2.containsValue(start+1)==true){res_arr[start]='1';}
+		  res_arr[x-1]='2';
+		}
+		String new_string=new String(res_arr);
+		System.out.println(new_string);
+		
+		}
+		else{System.out.println("impossible");}
+		
+	}
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Ideone id=new Ideone();
+		Scanner sc=new Scanner(System.in);
+		int test=sc.nextInt();
+		int i;
+		while(test>0){
+			int x=sc.nextInt();
+			int n=sc.nextInt();
+			int arr[]=new int[n];
+			for(i=0;i<n;i++){
+				arr[i]=i+1;
+			}
+		            id.getResult(x,arr);
+			test--;
+			
+		}
+	}
+}

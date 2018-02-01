@@ -1,0 +1,9 @@
+
+   function isBannerEnabled() {
+      var jsonObj = JSON.parse(configuration.settings.banner_Enabled[0]);
+      var product = $stateParams.product !== ALL ? getProductForDocSource(COURSESOURCE.LEX) : $stateParams.product;
+      if(product === undefined)
+        return jsonObj.hasOwnProperty($stateParams.family) > 0;
+      else
+        return (jsonObj.hasOwnProperty($stateParams.family) && jsonObj[$stateParams.family].indexOf(product)) > 0;
+    } 

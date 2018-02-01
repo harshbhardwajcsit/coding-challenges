@@ -1,0 +1,42 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+  public static void getTranspose(int matrix[][],int x,int y,int n){
+    if(x==y||x>y){
+	   for(int k=0;k<n;k++){
+	    for(int j=0;j<n;j++){
+	    	System.out.println("transpose matrix is :");
+		System.out.println(matrix[k][j]);
+		}
+	   }
+	}
+	else{
+	for(int i=x;i<y;i++){
+	  int a=matrix[x][i];
+	   int b=matrix[i][y];
+	   int c=matrix[y][y-i];
+	   int d=matrix[y-i][x];
+	   matrix[x][i]=d;
+	   matrix[y-i][i]=c;
+	   matrix[y][y-i]=b;
+	   matrix[i][y]=a;
+	}
+	 getTranspose(matrix,x+1,y-1,n);
+	}
+
+  }
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int N=5;
+		int Matrix[][]={{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+	
+		getTranspose(Matrix,0,N-1,N);
+	}
+}

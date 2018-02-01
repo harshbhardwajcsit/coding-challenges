@@ -1,0 +1,60 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	    Scanner sc=new Scanner(System.in);
+	    int test=sc.nextInt();
+	    while(test>0){
+	    	double sum=0;
+        double side1 = 0;
+        double side2 = 0;
+        double side3 = 0;
+	    	int n=sc.nextInt();
+	    	int a[][]=new int[n][2];
+	    	int i,j,k;
+	    	for(i=0;i<n;i++){
+	    		a[i][0]=sc.nextInt();
+	    		a[i][1]=sc.nextInt();
+	    		
+	    	}
+	    	
+	    		for(i=0;i<n-2;i++){
+	    	    		for(j=i+1;j<n-1;j++){
+	    	    		    for(k=j+1;k<n;k++){
+        double side1x  = a[i][0];
+        double side1y  = a[i][1];
+        double side2x  = a[j][0]; 
+        double side2y  = a[j][1];
+        double side3x  = a[k][0];
+        double side3y  = a[k][1];
+        
+        side1 = Math.pow(Math.pow((side2x - side1x), 2) + Math.pow((side2y - side1y), 2) * .05, side1);
+        side2 = Math.pow(Math.pow((side3x - side2x), 2) + Math.pow((side3y - side2y), 2) * .05, side2);
+        side3 = Math.pow(Math.pow((side1x - side3x), 2) + Math.pow((side1y - side3y), 2) * .05, side3);
+        double s = (side1 + side2 + side3)/ 2;
+
+        double area = Math.sqrt(s*(s - side1)*(s - side2)*(s-side3));
+
+        sum=sum+area;
+        System.out.println(sum);
+	    		
+	    	}
+	    		
+	    }
+	    		
+	 }
+	    	
+	    	
+	    	
+	    	
+	    	test--;
+	    }
+	}
+}
