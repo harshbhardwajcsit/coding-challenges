@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MapHomeComponent } from './components/map-home/map-home.component';
 import { InfoWindowComponent } from './components/info-window/info-window.component';
 import {AppRouterModule} from './app.router.module';
+import {AgmCoreModule} from '@agm/core';
 
 
 
@@ -17,7 +18,10 @@ import {AppRouterModule} from './app.router.module';
   ],
   imports: [
     BrowserModule,
-    AppRouterModule
+    AppRouterModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA_YsNXKIQ9qgFlkNVK0SA8A1WP3Cq6jew'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
