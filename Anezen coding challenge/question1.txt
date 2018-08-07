@@ -1,0 +1,59 @@
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+import java.util.*;
+
+class TestClass {
+    
+    String result_string="";
+    public String returnSmallestCharacter(String string,int k){
+    	String result="";
+        if(string.length()!=0){
+            Character store_smallest='z';
+            int index=0;
+            char arr[]=string.toCharArray();
+            for(int i=0;i<=k ;i++){
+            	if((int)arr[i]!=0){
+                
+                if((int)arr[i]<=(int)store_smallest){
+                    store_smallest=arr[i];
+                    index=i;
+                }
+            	}
+              
+                
+            }
+            System.out.println(store_smallest);
+            
+            char arr1[];
+            // if(arr.length!=1){
+            arr1=Arrays.copyOfRange(arr, 0, index-1);
+            arr1=Arrays.copyOfRange(arr, index+1,arr.length-1);
+            // }else{
+            //     arr1=Arrays.copyOfRange(arr, index,index);
+            // }
+            
+            result_string=result_string + Character.toString(store_smallest);
+            String new_string=new String(arr1);
+            System.out.println(new_string);
+            returnSmallestCharacter(new_string,k);
+            
+        }else{
+             result=result_string;
+        }
+        
+        return result;
+    }
+    
+    public static void main(String args[] ) throws Exception {
+      TestClass testClass=new TestClass();
+      Scanner scanner=new Scanner(System.in);
+      String input_string=scanner.next();
+      int input_integer=scanner.nextInt();
+      String result_string="";
+      
+     testClass.returnSmallestCharacter(input_string,input_integer);
+
+    }
+}

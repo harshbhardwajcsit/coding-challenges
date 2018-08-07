@@ -1,0 +1,137 @@
+
+import java.io.BufferedReader;
+        import java.io.InputStreamReader;
+        import java.util.*;
+        import java.lang.Integer;
+
+class TestClass {
+
+    public static List<Integer> list=new ArrayList<Integer>();
+    public static void main(String args[] ) throws Exception {
+
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int M = Integer.parseInt(br.readLine());
+        for (int i = 0; i < M; i++) {
+            StringTokenizer tk = new StringTokenizer(br.readLine());
+
+            int type = Integer.parseInt(tk.nextToken());
+            if (type == 1) {
+                int val = Integer.parseInt(tk.nextToken());
+                add_to_list(val);
+
+            }
+            else if (type == 2) {
+                int val = Integer.parseInt(tk.nextToken());
+                remove_from_list(val);
+
+            }
+            else if (type == 3) {
+                int ans = find_least_frequency();
+                System.out.println(ans);
+
+            }
+            else if (type == 4){
+                int ans = find_highest_frequency();
+                System.out.println(ans);
+
+            }
+        }
+    }
+    public static void add_to_list(int val){
+        //Process queries of type 1 here
+        list.add(val);
+
+    }
+
+    public static void remove_from_list(int val){
+        //Process queries of type 2 here
+        Iterator<Integer> iterator = list.iterator();
+        int index=0;
+        while(iterator.hasNext()){
+            int temp_value=iterator.next();
+            if(temp_value==val){
+                list.remove(index);
+                break;
+            }
+            index++;
+        }
+
+    }
+
+    public static int find_least_frequency(){
+        if(list.size()!=0){
+            //Process queries of type 3 here
+            Map<Integer,Integer> map=new HashMap<Integer,Integer>();
+            Iterator<Integer> iterator = list.iterator();
+
+            // while loop
+            while (iterator.hasNext()) {
+                int next_value=iterator.next();
+                if(map.containsKey(next_value)){
+                    map.put(next_value,map.get(next_value)+1);
+                }else{
+                    map.put(next_value,1);
+                }
+            }
+
+            int min_count=1;
+            int value=0;
+
+            for (Map.Entry<Integer, Integer> entry : map.entrySet())
+            {
+
+                if(min_count==entry.getValue()){
+                    if(value<entry.getKey()){
+                        value=entry.getKey();
+                    }
+                }
+            }
+
+            return value;
+        }
+        else{
+            return -1;
+        }
+    }
+
+
+
+    public static int find_highest_frequency(){
+        //Process queries of type 4 here
+        if(list.size()!=0){
+            Map<Integer,Integer> map=new HashMap<Integer,Integer>();
+            Iterator<Integer> iterator = list.iterator();
+
+            // while loop
+            while (iterator.hasNext()) {
+                int next_value1=iterator.next();
+                if(map.containsKey(next_value1)){
+                    map.put(next_value1,map.get(next_value1)+1);
+                }else{
+                    map.put(next_value1,1);
+                }
+            }
+
+            int max_count=0;
+            int value=0;
+
+            for (Map.Entry<Integer, Integer> entry : map.entrySet())
+            {
+                if(max_count<entry.getValue()){
+                    max_count=entry.getValue();
+                    value=entry.getKey();
+                }
+                if(max_count==entry.getValue()){
+                    if(value>entry.getKey()){
+                        value=entry.getKey();
+                    }
+                }
+            }
+
+            return value;
+        }else{
+            return -1;
+        }
+    }
+}
