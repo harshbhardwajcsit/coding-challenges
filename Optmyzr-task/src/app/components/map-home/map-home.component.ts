@@ -3,6 +3,7 @@ import { } from '@types/googlemaps';
 import {GetUserCurrentLocationService} from '../../services/getUserCurrentLocation/get-user-current-location.service';
 import {GetWeatherInfoService} from "../../services/getWeatherInfo/get-weather-info.service";
 import {GetDateAndTimeService} from "../../services/getDateAndTime/get-date-and-time.service";
+import {GetTimeStampService} from "../../services/getTimeStamp/get-time-stamp.service";
 
 @Component({
   selector: 'app-map-home',
@@ -16,10 +17,14 @@ export class MapHomeComponent implements OnInit {
   lat:any=0;
   lng:any=0;
   time:any;
+  standardTimeZone:any;
+  localTimeZone:any;
   temperature:any;
   weather:any;
-  previous;
-  constructor(private getUserCurrentLocation: GetUserCurrentLocationService,private getWeatherInfo:GetWeatherInfoService,private getDateAndTimeService:GetDateAndTimeService) {
+  constructor(private getUserCurrentLocation: GetUserCurrentLocationService,
+              private getWeatherInfo:GetWeatherInfoService,
+              private getDateAndTimeService:GetDateAndTimeService,
+              private getTimeStamp:GetTimeStampService) {
 
   }
 
@@ -43,7 +48,11 @@ export class MapHomeComponent implements OnInit {
     });
 
     this.getDateAndTimeService.getTimeZone($event.coords).subscribe(response=>{
-      console.log("time",response);
+      let offset=response.dstOffset+response.rawOffset;
+      this.time=this.calcTime(offset);
+      this.standardTimeZone=this.time.toUTCString();
+      this.localTimeZone=this.time.toLocaleString();
+
     });
 
   }
@@ -52,6 +61,13 @@ export class MapHomeComponent implements OnInit {
     if (tempInKelvin >= (0)) {
       return (tempInKelvin - 273.15);
     }
+  }
+
+  calcTime(offset) {
+    var date = new Date();
+    var utc = date.getTime() + (date.getTimezoneOffset() * 60000);
+    var dateTime = new Date(utc + (1000*offset));
+    return dateTime;
   }
 
 
