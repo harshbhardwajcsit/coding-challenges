@@ -10,9 +10,9 @@ import {GetUserCurrentLocationService} from '../../services/getUserCurrentLocati
 })
 export class MapHomeComponent implements OnInit {
   zoom: Number = 2.5;
-  currentGeoLocation: any = null;
-  lat: any;
-  lng: any;
+
+  lat:any=0;
+  lng:any=0;
 
   // initial center position for the map
   // lat = 51.673858;
@@ -24,11 +24,20 @@ export class MapHomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    let self: any = this;
+    this.getUserCurrentLocation.getGeoLocationOfUser().then(function (response) {
+      console.log("geo",response);
+      if(response){
+        self.lng=response.longitude;
+        self.lat=response.latitude;
 
-       this.currentGeoLocation = this.getUserCurrentLocation.getGeoLocationOfUser();
-       console.log("yes", this.currentGeoLocation);
-    // this.lat = this.currentGeoLocation.latitude;
-    // this.lng = this.currentGeoLocation.longitude;
+      }
+
+    });
+  }
+
+  ngOnChanges(){
+
   }
 
   mapClicked($event: any) {
