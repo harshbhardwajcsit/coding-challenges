@@ -19,7 +19,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 1. **GetUserCurrentLocationService** : Responsible for fetching user's current geographical location(latitude & longitude).
 2. **GetTimeStampService** : Responsible for calculating current timestamp, that is used in Date and time service as a parameter for google time API.
-3. **GetDateAndTimeService** :Return TimeZone "dstOffset", "rawOffset" and "TimeZoneId/Name" of specific latitude and longitude.
+3. **GetDateAndTimeService** :Return TimeZone "dstOffset", "rawOffset" and "TimeZoneId/Name" of specific latitude and longitude, (Also considered Day Light Saving into account while calculating time)
 4. **GetWeatherInfoService** : Return weather information of specific latitude and longitude.
 5. **ApplicationUrlService** : Just to Externalize urls, keys in application.
 
