@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class ApplicationUrlService {
 
   public weatherInfoApiBaseUrl="http://api.openweathermap.org/data/2.5/weather?";
-  public googleTimeZoneApiBaseUrl="";
+  public googleTimeZoneApiBaseUrl="https://maps.googleapis.com/maps/api/timezone/json?";
   constructor() { }
 
 }
