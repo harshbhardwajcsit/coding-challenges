@@ -11,7 +11,7 @@ export class GetWeatherInfoService {
 
   getCurrentWeather(geoCoordinates): Observable<any>{
     return this.http.get(this.appUrlService.weatherInfoApiBaseUrl+
-      "lat=" + geoCoordinates.lat + "&lon=" + geoCoordinates.lng +"&appid="+ "bce5fa606dea95d559f6ed26d3268d7d");
+      "lat=" + geoCoordinates.lat + "&lon=" + geoCoordinates.lng +"&appid="+ this.appUrlService.weatherApiKey);
   }
 
 }

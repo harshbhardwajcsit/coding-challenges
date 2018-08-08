@@ -5,7 +5,8 @@
   [longitude]="lng"
   [zoom]="zoom"
   [disableDefaultUI]="false"
-  [zoomControl]="false"
+  [zoomControl]="true"
+  [clickableIcons]="true"
   (mapClick)="mapClicked($event)">
 
   <agm-circle [latitude]="lat + 0.3" [longitude]="lng"

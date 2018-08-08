@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MapHomeComponent } from './components/map-home/map-home.component';
-import { InfoWindowComponent } from './components/info-window/info-window.component';
 import {AppRouterModule} from './app.router.module';
 import {AgmCoreModule} from '@agm/core';
 import {HttpClientModule} from "@angular/common/http";
@@ -17,8 +16,7 @@ import {GetTimeStampService} from "./services/getTimeStamp/get-time-stamp.servic
 @NgModule({
   declarations: [
     AppComponent,
-    MapHomeComponent,
-    InfoWindowComponent
+    MapHomeComponent
   ],
   imports: [
     BrowserModule,

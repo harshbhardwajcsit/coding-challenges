@@ -7,10 +7,12 @@ import {GetTimeStampService} from "../getTimeStamp/get-time-stamp.service";
 @Injectable()
 export class GetDateAndTimeService {
 
-  constructor(private http:HttpClient,private appUrlService:ApplicationUrlService,private getTimeStamp:GetTimeStampService) { }
+  constructor(private http:HttpClient,
+              private appUrlService:ApplicationUrlService,
+              private getTimeStamp:GetTimeStampService) { }
 
   getTimeZone(geoCoordinates):Observable<any>{
-    return this.http.get(this.appUrlService.googleTimeZoneApiBaseUrl+"location="+geoCoordinates.lat+"," +geoCoordinates.lng + "&timestamp=" +this.getTimeStamp.getTimeStamp() +"&key=AIzaSyAIa3yZTOXXlknH_2VGoPKLe_cE3GVMjoU\n");
+    return this.http.get(this.appUrlService.googleTimeZoneApiBaseUrl+"location="+geoCoordinates.lat+"," +geoCoordinates.lng + "&timestamp=" +this.getTimeStamp.getTimeStamp() +"&key=" + this.appUrlService.googleMapKey);
   }
 
 

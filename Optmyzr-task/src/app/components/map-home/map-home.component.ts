@@ -12,8 +12,7 @@ import {GetTimeStampService} from "../../services/getTimeStamp/get-time-stamp.se
   providers: [GetUserCurrentLocationService,GetWeatherInfoService,GetDateAndTimeService]
 })
 export class MapHomeComponent implements OnInit {
-  zoom: Number = 2.5;
-
+  zoom: Number = 2.3;
   lat:any=0;
   lng:any=0;
   time:any;
