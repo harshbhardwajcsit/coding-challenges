@@ -10,6 +10,7 @@ import {AgmCoreModule} from '@agm/core';
 import {HttpClientModule} from "@angular/common/http";
 import {GetWeatherInfoService} from "./services/getWeatherInfo/get-weather-info.service";
 import {ApplicationUrlService} from "./services/applicationUrlService/application-url.service";
+import {GetTimeStampService} from "./services/getTimeStamp/get-time-stamp.service";
 
 
 
@@ -27,7 +28,7 @@ import {ApplicationUrlService} from "./services/applicationUrlService/applicatio
       apiKey: 'AIzaSyAIa3yZTOXXlknH_2VGoPKLe_cE3GVMjoU'
     })
   ],
-  providers: [ApplicationUrlService],
+  providers: [ApplicationUrlService,GetTimeStampService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

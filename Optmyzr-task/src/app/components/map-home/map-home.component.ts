@@ -46,9 +46,6 @@ export class MapHomeComponent implements OnInit {
       console.log("time",response);
     });
 
-    console.log(this.getTimeStamp());
-
-
   }
 
   convertKelvinToCelsius(tempInKelvin){
@@ -57,13 +54,6 @@ export class MapHomeComponent implements OnInit {
     }
   }
 
-  getTimeStamp() {
-    let now = new Date();
-    console.log(now)
-    return ((now.getMonth() + 1) + '/' + (now.getDate()) + '/' + now.getFullYear() + " " + now.getHours() + ':'
-      + ((now.getMinutes() < 10) ? ("0" + now.getMinutes()) : (now.getMinutes())) + ':' + ((now.getSeconds() < 10) ? ("0" + now
-        .getSeconds()) : (now.getSeconds())));
-  }
 
 }
 
