@@ -1,18 +1,12 @@
-
-<agm-map
+<div>
+  <div class="mapView">
+  <agm-map
   [latitude]="lat"
   [longitude]="lng"
   [zoom]="zoom"
   [disableDefaultUI]="false"
   [zoomControl]="false"
   (mapClick)="mapClicked($event)">
-  <agm-marker>
-
-    <agm-info-window>
-      <strong>InfoWindow content</strong>
-    </agm-info-window>
-
-  </agm-marker>
 
   <agm-circle [latitude]="lat + 0.3" [longitude]="lng"
               [radius]="5000"
@@ -20,5 +14,15 @@
               [circleDraggable]="true"
               [editable]="true">
   </agm-circle>
+   </agm-map>
 
-</agm-map>
+  </div>
+  <div class="InfoWindow">
+    <div class="clickedInfo">
+      <p>Please click anywhere on the map to get infomation about weather and time zone</p>
+      <p>Temperature in celsius : {{temperature}}</p>
+      <p>Climate : {{weather}}</p>
+    </div>
+  </div>
+
+</div>

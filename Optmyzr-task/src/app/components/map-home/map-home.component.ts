@@ -17,6 +17,7 @@ export class MapHomeComponent implements OnInit {
   time:any;
   temperature:any;
   weather:any;
+  previous;
   constructor(private getUserCurrentLocation: GetUserCurrentLocationService,private getWeatherInfo:GetWeatherInfoService) {
 
   }
@@ -36,8 +37,6 @@ export class MapHomeComponent implements OnInit {
 
   mapClicked($event: any) {
     this.getWeatherInfo.getCurrentWeather($event.coords).subscribe(response=>{
-      console.log("temperature",Math.round(this.convertKelvinToCelsius(response.main.temp)));
-      console.log("weather condition",response.weather[0].description);
       this.temperature=Math.round(this.convertKelvinToCelsius(response.main.temp));
       this.weather=response.weather[0].description;
     })
