@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class InfoWindowComponent implements OnInit {
 
   constructor() { }
-  list=["Item1","Item2","Item3"];
+
 
   ngOnInit() {
 

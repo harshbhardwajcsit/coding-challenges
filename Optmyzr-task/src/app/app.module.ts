@@ -7,6 +7,9 @@ import { MapHomeComponent } from './components/map-home/map-home.component';
 import { InfoWindowComponent } from './components/info-window/info-window.component';
 import {AppRouterModule} from './app.router.module';
 import {AgmCoreModule} from '@agm/core';
+import {HttpClientModule} from "@angular/common/http";
+import {GetWeatherInfoService} from "./services/getWeatherInfo/get-weather-info.service";
+import {ApplicationUrlService} from "./services/applicationUrlService/application-url.service";
 
 
 
@@ -19,11 +22,12 @@ import {AgmCoreModule} from '@agm/core';
   imports: [
     BrowserModule,
     AppRouterModule,
+    HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAIa3yZTOXXlknH_2VGoPKLe_cE3GVMjoU'
     })
   ],
-  providers: [],
+  providers: [ApplicationUrlService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

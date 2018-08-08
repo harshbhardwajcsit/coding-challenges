@@ -1,49 +1,54 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import { } from '@types/googlemaps';
 import {GetUserCurrentLocationService} from '../../services/getUserCurrentLocation/get-user-current-location.service';
+import {GetWeatherInfoService} from "../../services/getWeatherInfo/get-weather-info.service";
 
 @Component({
   selector: 'app-map-home',
   templateUrl: './map-home.component.html',
   styleUrls: ['./map-home.component.css'],
-  providers: [GetUserCurrentLocationService]
+  providers: [GetUserCurrentLocationService,GetWeatherInfoService]
 })
 export class MapHomeComponent implements OnInit {
   zoom: Number = 2.5;
 
   lat:any=0;
   lng:any=0;
-
-  // initial center position for the map
-  // lat = 51.673858;
-  // lng = 7.815982;
-
-
-  constructor(private getUserCurrentLocation: GetUserCurrentLocationService) {
+  time:any;
+  temperature:any;
+  weather:any;
+  constructor(private getUserCurrentLocation: GetUserCurrentLocationService,private getWeatherInfo:GetWeatherInfoService) {
 
   }
 
   ngOnInit() {
-    let self: any = this;
+    let geoLocationCoordinates: any = this;
     this.getUserCurrentLocation.getGeoLocationOfUser().then(function (response) {
-      console.log("geo",response);
       if(response){
-        self.lng=response.longitude;
-        self.lat=response.latitude;
-
+        geoLocationCoordinates.lng=response.longitude;
+        geoLocationCoordinates.lat=response.latitude;
       }
 
+    },function(error){
+      console.log('Error while getting Current Geological Location');
     });
   }
 
-  ngOnChanges(){
-
-  }
-
   mapClicked($event: any) {
-    console.log('lat' , $event.coords.lat);
-    console.log('long' , $event.coords.lng);
+    this.getWeatherInfo.getCurrentWeather($event.coords).subscribe(response=>{
+      console.log("temperature",Math.round(this.convertKelvinToCelsius(response.main.temp)));
+      console.log("weather condition",response.weather[0].description);
+      this.temperature=Math.round(this.convertKelvinToCelsius(response.main.temp));
+      this.weather=response.weather[0].description;
+    })
   }
+
+  convertKelvinToCelsius(tempInKelvin){
+    if (tempInKelvin >= (0)) {
+      return (tempInKelvin - 273.15);
+    }
+  }
+
 }
 
 
