@@ -23,7 +23,7 @@ import {GetTimeStampService} from "./services/getTimeStamp/get-time-stamp.servic
     AppRouterModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAIa3yZTOXXlknH_2VGoPKLe_cE3GVMjoU'
+      apiKey: 'YOUR_GOOGLE_MAP_API_KEY'
     })
   ],
   providers: [ApplicationUrlService,GetTimeStampService],
