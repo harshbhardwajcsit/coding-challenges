@@ -23,6 +23,7 @@ export class MapHomeComponent implements OnInit {
   demoMarkers:any=[];
 
 
+
   constructor(private getUserCurrentLocation: GetUserCurrentLocationService,
               private getWeatherInfo:GetWeatherInfoService,
               private getDateAndTimeService:GetDateAndTimeService,
@@ -61,7 +62,7 @@ export class MapHomeComponent implements OnInit {
       {
         lat: $event.coords.lat,
         lng: $event.coords.lng,
-        label: 'o_o',
+        label: 'o.o',
         draggable: true
       }
     ];

@@ -1,5 +1,4 @@
-
-  <agm-map
+<agm-map
   [latitude]="lat"
   [longitude]="lng"
   [zoom]="zoom"
@@ -15,7 +14,7 @@
       [longitude]="m.lng"
       [label]="m.label"
       [markerDraggable]="m.draggable">
-      <agm-info-window class="activeInfoWindow">
+      <agm-info-window>
         <strong>Temperature in celsius : {{temperature}}</strong><br>
         <strong>Climate : {{weather}}</strong><br>
         <strong>Standard Time Zone :{{standardTimeZone}}</strong><br>
@@ -23,6 +22,9 @@
       </agm-info-window>
 
     </agm-marker>
+
+
+
   <agm-circle [latitude]="lat + 0.3" [longitude]="lng"
               [radius]="5000"
               [fillColor]="'red'"
