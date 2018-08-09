@@ -1,5 +1,5 @@
 agm-map {
-  height: 700px;
+  height: 1000px;
 }
 
 
@@ -9,15 +9,6 @@ agm-map {
 
 a {
   color: darkblue;
-}
-
-.InfoWindow{
-  height: 180px;
-  border-color: black;
-  border-style: dashed;
-}
-.mapView{
-  height: 70%;
 }
 .clickedInfo{
   padding-left: 10px;

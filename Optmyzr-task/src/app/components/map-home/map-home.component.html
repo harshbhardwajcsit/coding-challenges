@@ -1,5 +1,4 @@
-<div>
-  <div class="mapView">
+
   <agm-map
   [latitude]="lat"
   [longitude]="lng"
@@ -9,6 +8,21 @@
   [clickableIcons]="true"
   (mapClick)="mapClicked($event)">
 
+
+    <agm-marker
+      *ngFor="let m of demoMarkers; let i = index"
+      [latitude]="m.lat"
+      [longitude]="m.lng"
+      [label]="m.label"
+      [markerDraggable]="m.draggable">
+      <agm-info-window class="activeInfoWindow">
+        <strong>Temperature in celsius : {{temperature}}</strong><br>
+        <strong>Climate : {{weather}}</strong><br>
+        <strong>Standard Time Zone :{{standardTimeZone}}</strong><br>
+        <strong>In Your Time Zone :{{localTimeZone}}</strong><br>
+      </agm-info-window>
+
+    </agm-marker>
   <agm-circle [latitude]="lat + 0.3" [longitude]="lng"
               [radius]="5000"
               [fillColor]="'red'"
@@ -17,15 +31,4 @@
   </agm-circle>
    </agm-map>
 
-  </div>
-  <div class="InfoWindow">
-    <div class="clickedInfo">
-      <p>Please click anywhere on the map to get infomation about weather and time zone</p>
-      <p>Temperature in celsius : {{temperature}}</p>
-      <p>Climate : {{weather}}</p>
-      <p>Standard Time Zone :{{standardTimeZone}}</p>
-      <p>In Your Time Zone :{{localTimeZone}}</p>
-    </div>
-  </div>
 
-</div>

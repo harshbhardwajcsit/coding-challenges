@@ -20,6 +20,9 @@ export class MapHomeComponent implements OnInit {
   localTimeZone:any;
   temperature:any;
   weather:any;
+  demoMarkers:any=[];
+
+
   constructor(private getUserCurrentLocation: GetUserCurrentLocationService,
               private getWeatherInfo:GetWeatherInfoService,
               private getDateAndTimeService:GetDateAndTimeService,
@@ -54,6 +57,16 @@ export class MapHomeComponent implements OnInit {
 
     });
 
+    this.demoMarkers=[
+      {
+        lat: $event.coords.lat,
+        lng: $event.coords.lng,
+        label: 'o_o',
+        draggable: true
+      }
+    ];
+    console.log(this.demoMarkers);
+
   }
 
   convertKelvinToCelsius(tempInKelvin){
@@ -71,6 +84,13 @@ export class MapHomeComponent implements OnInit {
 
 
 }
+interface marker {
+  lat: number;
+  lng: number;
+  label?: string;
+  draggable: boolean;
+}
+
 
 
 
