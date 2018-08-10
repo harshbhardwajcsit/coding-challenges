@@ -12,7 +12,6 @@ import {ApplicationUrlService} from "./services/applicationUrlService/applicatio
 import {GetTimeStampService} from "./services/getTimeStamp/get-time-stamp.service";
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
