@@ -3,7 +3,7 @@ package com.practise.invoice;
 public class Item {
     private String itemName;
     private long quantity;
-    private float cost;
+    private double cost;
 
     public void setItemName(String itemName) {
         this.itemName = itemName;
@@ -13,7 +13,7 @@ public class Item {
         this.quantity = quantity;
     }
 
-    public void setCost(float cost) {
+    public void setCost(double cost) {
         this.cost = cost;
     }
 
@@ -25,7 +25,7 @@ public class Item {
         return quantity;
     }
 
-    public float getCost() {
+    public double getCost() {
         return cost;
     }
 }

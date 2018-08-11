@@ -1,7 +1,7 @@
 package com.practise.invoice;
 
 public interface Calculator {
-    public double getItemFinalPriceIncludingTax(Item item);
-    public double getFinalPurchasedPrice(Item item);
+    public Item getItemFinalPriceIncludingTax(Item item);
+    public double getFinalPurchasedPrice(double finalPriceBeforeTax);
     public double applyRegularTax(Item item);
 }
