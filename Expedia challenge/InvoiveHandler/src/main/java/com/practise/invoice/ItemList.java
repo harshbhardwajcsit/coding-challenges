@@ -7,7 +7,7 @@ import java.util.Set;
 class ItemList {
    private Set<String> medicalItemList=new HashSet<String>(){
        {
-           add("headache pills");
+           add("box of headache pills");
            add("bandage");
        }
    };

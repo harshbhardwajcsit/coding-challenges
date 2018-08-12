@@ -14,14 +14,15 @@ import java.util.SortedMap;
 public class CreateInvoice extends CalculatorImpl{
 
     ArrayList<Item> updatedInvoiceList = new ArrayList<>();
-    double finalPriceAfterTaxApplied = 0;
-    double totalSalesTax = 0;
+    double finalPriceAfterTaxApplied;
+    double totalSalesTax;
     void createInvoice(ArrayList<Item> itemList) {
-
+        finalPriceAfterTaxApplied=0;
+        totalSalesTax=0;
         for (Item listItem : itemList) {
             double itemPriceBeforeTax = listItem.getCost();
             Item itemWithTaxApplied = getItemFinalPriceIncludingTax(listItem);
-            totalSalesTax = totalSalesTax + (itemWithTaxApplied.getCost() - itemPriceBeforeTax);
+            totalSalesTax = totalSalesTax + (itemWithTaxApplied.getCost() - itemPriceBeforeTax*itemWithTaxApplied.getQuantity());
             updatedInvoiceList.add(itemWithTaxApplied);
 
         }
