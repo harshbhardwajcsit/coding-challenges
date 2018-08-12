@@ -2,24 +2,34 @@ package com.practise.invoice;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class CalculatorImpl implements Calculator {
     private int tax=20;
 
     @Override
     public Item getItemFinalPriceIncludingTax(Item item) {
-        item.setCost(applyRegularTax(item)+item.getCost());
+        item.setCost(item.getCost()*item.getQuantity()+applyRegularTax(item.getCost()*item.getQuantity()));
         return item;
 
     }
 
     @Override
-    public double getFinalPurchasedPrice(double finalPriceBeforeTax) {
-        return (finalPriceBeforeTax*20)/100;
+    public double getFinalPurchasedPrice(ArrayList<Item> listWithTaxApplied) {
+        double finalPriceBeforeTax=0;
+        Iterator<Item> iterator = listWithTaxApplied.iterator();
+        while (iterator.hasNext()) {
+            Item listItem=iterator.next();
+            finalPriceBeforeTax=finalPriceBeforeTax+listItem.getCost();
+        }
+
+        return applyRegularTax(finalPriceBeforeTax)+finalPriceBeforeTax;
     }
 
     @Override
-    public double applyRegularTax(Item item) {
+    public double applyRegularTax(double cost) {
 
-        return (item.getQuantity()*item.getCost()*tax)/100;
+        return (cost*tax)/100;
     }
 }

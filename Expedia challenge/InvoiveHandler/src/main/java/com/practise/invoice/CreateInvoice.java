@@ -16,21 +16,25 @@ public class CreateInvoice extends CalculatorImpl  {
 
     void createInvoice(ArrayList<Item> itemList){
         ArrayList<Item> updatedInvoiceList=new ArrayList<>();
-        double finalPriceBeforeTax=0;
         double finalPriceAfterTaxApplied=0;
+        double totalSalesTax=0;
+
         Iterator<Item> iterator = itemList.iterator();
         while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-            Item itemWithTaxApplied=getItemFinalPriceIncludingTax(iterator.next());
+            Item listItem=iterator.next();
+            Item itemWithTaxApplied=getItemFinalPriceIncludingTax(listItem);
+            totalSalesTax=totalSalesTax+ (itemWithTaxApplied.getCost()-listItem.getCost());
             updatedInvoiceList.add(itemWithTaxApplied);
-            finalPriceBeforeTax=finalPriceBeforeTax+itemWithTaxApplied.getCost();
+
         }
-        finalPriceAfterTaxApplied=getFinalPurchasedPrice(finalPriceBeforeTax);
-        printInvoice(updatedInvoiceList);
+        finalPriceAfterTaxApplied=getFinalPurchasedPrice(updatedInvoiceList);
+        System.out.println(finalPriceAfterTaxApplied);
+        printInvoice(updatedInvoiceList,totalSalesTax,finalPriceAfterTaxApplied);
+
 
     }
 
-    void printInvoice(ArrayList<Item> updatedInvoiceList){
+    void printInvoice(ArrayList<Item> updatedInvoiceList,double totalSalesTax,double finalPriceAfterTaxApplied){
         System.out.println(updatedInvoiceList);
 
     }
