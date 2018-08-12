@@ -20,8 +20,9 @@ public class CreateInvoice extends CalculatorImpl  {
         double totalSalesTax=0;
 
         for (Item listItem : itemList) {
+            double itemPriceBeforTax=listItem.getCost();
             Item itemWithTaxApplied = getItemFinalPriceIncludingTax(listItem);
-            totalSalesTax = totalSalesTax + (itemWithTaxApplied.getCost() - listItem.getCost());
+            totalSalesTax = totalSalesTax + (itemWithTaxApplied.getCost()- itemPriceBeforTax);
             updatedInvoiceList.add(itemWithTaxApplied);
 
         }
