@@ -26,28 +26,40 @@ public class InvoiceApplicationTests {
 
 
 	@Test
-	public void testCreateInvoice(){
+	public void testCreateInvoiceWithNoMedicalProducts(){
         ArrayList<Item> arrayList=new ArrayList<>();
         Item item=new Item();
 		item.setQuantity(1);
-		item.setItemName("Wine");
-		item.setCost(20);
+		item.setItemName("book");
+		item.setCost(30);
         arrayList.add(item);
 
+
         Item item1=new Item();
-        item1.setQuantity(2);
-        item1.setItemName("bandage");
-        item1.setCost(4);
+        item1.setQuantity(1);
+        item1.setItemName("chocolate");
+        item1.setCost(1);
         arrayList.add(item1);
-
-        Item item2=new Item();
-        item2.setQuantity(1);
-        item2.setItemName("Pens");
-        item2.setCost(10);
-        arrayList.add(item2);
-
         createInvoice.createInvoice(arrayList);
 
+        ArrayList<Item> expectedList=new ArrayList<>();
+        Item item2=new Item();
+        item2.setItemName("book");
+        item2.setQuantity(1);
+        item2.setCost(36.0);
+        arrayList.add(item2);
+        expectedList.add(item2);
+
+        Item item3=new Item();
+        item3.setItemName("chocolate");
+        item3.setQuantity(1);
+        item3.setCost(1.2);
+        arrayList.add(item3);
+        expectedList.add(item3);
+
+
+        assertEquals("The Total cost after apply regular tax",37.2,createInvoice.finalPriceAfterTaxApplied);
+        assertEquals("Total Sales Tax",6.2,createInvoice.totalSalesTax);
 	}
 
 }

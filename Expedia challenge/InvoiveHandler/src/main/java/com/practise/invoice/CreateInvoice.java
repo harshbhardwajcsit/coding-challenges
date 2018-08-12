@@ -13,12 +13,10 @@ import java.util.SortedMap;
 @Component
 public class CreateInvoice extends CalculatorImpl{
 
-
+    ArrayList<Item> updatedInvoiceList = new ArrayList<>();
+    double finalPriceAfterTaxApplied = 0;
+    double totalSalesTax = 0;
     void createInvoice(ArrayList<Item> itemList) {
-        ArrayList<Item> updatedInvoiceList = new ArrayList<>();
-        double finalPriceAfterTaxApplied = 0;
-        double totalSalesTax = 0;
-
 
         for (Item listItem : itemList) {
             double itemPriceBeforeTax = listItem.getCost();
