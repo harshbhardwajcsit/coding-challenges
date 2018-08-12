@@ -31,12 +31,12 @@ public class InvoiceApplicationTests {
         Item item=new Item();
 		item.setQuantity(1);
 		item.setItemName("Book");
-		item.setCost(20);
+		item.setCost(30);
         arrayList.add(item);
         Item item1=new Item();
-        item1.setQuantity(2);
-        item1.setItemName("pen");
-        item1.setCost(10);
+        item1.setQuantity(1);
+        item1.setItemName("chocklate");
+        item1.setCost(1);
         arrayList.add(item1);
         createInvoice.createInvoice(arrayList);
 

@@ -19,11 +19,9 @@ public class CreateInvoice extends CalculatorImpl  {
         double finalPriceAfterTaxApplied=0;
         double totalSalesTax=0;
 
-        Iterator<Item> iterator = itemList.iterator();
-        while (iterator.hasNext()) {
-            Item listItem=iterator.next();
-            Item itemWithTaxApplied=getItemFinalPriceIncludingTax(listItem);
-            totalSalesTax=totalSalesTax+ (itemWithTaxApplied.getCost()-listItem.getCost());
+        for (Item listItem : itemList) {
+            Item itemWithTaxApplied = getItemFinalPriceIncludingTax(listItem);
+            totalSalesTax = totalSalesTax + (itemWithTaxApplied.getCost() - listItem.getCost());
             updatedInvoiceList.add(itemWithTaxApplied);
 
         }
@@ -36,6 +34,8 @@ public class CreateInvoice extends CalculatorImpl  {
 
     void printInvoice(ArrayList<Item> updatedInvoiceList,double totalSalesTax,double finalPriceAfterTaxApplied){
         System.out.println(updatedInvoiceList);
+        System.out.println(totalSalesTax);
+        System.out.println(finalPriceAfterTaxApplied);
 
     }
 }

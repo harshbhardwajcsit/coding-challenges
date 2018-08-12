@@ -6,11 +6,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class CalculatorImpl implements Calculator {
-    private int tax=20;
 
     @Override
     public Item getItemFinalPriceIncludingTax(Item item) {
-        item.setCost(item.getCost()*item.getQuantity()+applyRegularTax(item.getCost()*item.getQuantity()));
+        item.setCost(getGrossPrice(item)+applyRegularTax(getGrossPrice(item)));
         return item;
 
     }
@@ -18,18 +17,22 @@ public class CalculatorImpl implements Calculator {
     @Override
     public double getFinalPurchasedPrice(ArrayList<Item> listWithTaxApplied) {
         double finalPriceBeforeTax=0;
-        Iterator<Item> iterator = listWithTaxApplied.iterator();
-        while (iterator.hasNext()) {
-            Item listItem=iterator.next();
-            finalPriceBeforeTax=finalPriceBeforeTax+listItem.getCost();
+        for (Item listItem : listWithTaxApplied) {
+            finalPriceBeforeTax = finalPriceBeforeTax + listItem.getCost();
         }
 
-        return applyRegularTax(finalPriceBeforeTax)+finalPriceBeforeTax;
+        return finalPriceBeforeTax;
     }
 
     @Override
     public double applyRegularTax(double cost) {
 
-        return (cost*tax)/100;
+        int tax = 20;
+        return (cost* tax)/100;
+    }
+
+    @Override
+    public double getGrossPrice(Item item){
+        return item.getCost()*item.getQuantity();
     }
 }

@@ -6,4 +6,5 @@ public interface Calculator {
     public Item getItemFinalPriceIncludingTax(Item item);
     public double getFinalPurchasedPrice(ArrayList<Item> listWithTaxApplied);
     public double applyRegularTax(double cost);
+    public double getGrossPrice(Item item);
 }
