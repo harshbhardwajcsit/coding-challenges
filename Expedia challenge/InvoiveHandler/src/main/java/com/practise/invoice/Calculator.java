@@ -7,4 +7,5 @@ public interface Calculator {
     public double getFinalPurchasedPrice(ArrayList<Item> listWithTaxApplied);
     public double applyRegularTax(double cost);
     public double getGrossPrice(Item item);
+    public boolean isMedicalProduct(Item item);
 }

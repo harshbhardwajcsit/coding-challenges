@@ -9,7 +9,12 @@ public class CalculatorImpl implements Calculator {
 
     @Override
     public Item getItemFinalPriceIncludingTax(Item item) {
-        item.setCost(getGrossPrice(item)+applyRegularTax(getGrossPrice(item)));
+        if(!isMedicalProduct(item)){
+            item.setCost(getGrossPrice(item)+applyRegularTax(getGrossPrice(item)));
+        }else{
+            item.setCost(getGrossPrice(item));
+        }
+
         return item;
 
     }
@@ -34,5 +39,14 @@ public class CalculatorImpl implements Calculator {
     @Override
     public double getGrossPrice(Item item){
         return item.getCost()*item.getQuantity();
+    }
+
+    @Override
+    public  boolean isMedicalProduct(Item item){
+        boolean isMedicalProduct=false;
+        if(new ItemList().getMedicalItemList().contains(item.getItemName())){
+            isMedicalProduct=true;
+        }
+        return isMedicalProduct;
     }
 }

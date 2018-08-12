@@ -30,14 +30,22 @@ public class InvoiceApplicationTests {
         ArrayList<Item> arrayList=new ArrayList<>();
         Item item=new Item();
 		item.setQuantity(1);
-		item.setItemName("Book");
-		item.setCost(30);
+		item.setItemName("Wine");
+		item.setCost(20);
         arrayList.add(item);
+
         Item item1=new Item();
-        item1.setQuantity(1);
-        item1.setItemName("chocklate");
-        item1.setCost(1);
+        item1.setQuantity(2);
+        item1.setItemName("bandage");
+        item1.setCost(4);
         arrayList.add(item1);
+
+        Item item2=new Item();
+        item2.setQuantity(1);
+        item2.setItemName("Pens");
+        item2.setCost(10);
+        arrayList.add(item2);
+
         createInvoice.createInvoice(arrayList);
 
 	}

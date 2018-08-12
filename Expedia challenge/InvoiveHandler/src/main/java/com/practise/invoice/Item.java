@@ -1,31 +1,31 @@
 package com.practise.invoice;
 
-public class Item {
+class Item {
     private String itemName;
     private long quantity;
     private double cost;
 
-    public void setItemName(String itemName) {
+    void setItemName(String itemName) {
         this.itemName = itemName;
     }
 
-    public void setQuantity(long quantity) {
+    void setQuantity(long quantity) {
         this.quantity = quantity;
     }
 
-    public void setCost(double cost) {
+    void setCost(double cost) {
         this.cost = cost;
     }
 
-    public String getItemName() {
+    String getItemName() {
         return itemName;
     }
 
-    public long getQuantity() {
+    long getQuantity() {
         return quantity;
     }
 
-    public double getCost() {
+    double getCost() {
         return cost;
     }
 }

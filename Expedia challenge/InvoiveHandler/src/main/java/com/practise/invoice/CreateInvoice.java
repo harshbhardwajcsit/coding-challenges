@@ -11,32 +11,33 @@ import java.util.List;
 import java.util.SortedMap;
 
 @Component
-public class CreateInvoice extends CalculatorImpl  {
+public class CreateInvoice extends CalculatorImpl{
 
 
-    void createInvoice(ArrayList<Item> itemList){
-        ArrayList<Item> updatedInvoiceList=new ArrayList<>();
-        double finalPriceAfterTaxApplied=0;
-        double totalSalesTax=0;
+    void createInvoice(ArrayList<Item> itemList) {
+        ArrayList<Item> updatedInvoiceList = new ArrayList<>();
+        double finalPriceAfterTaxApplied = 0;
+        double totalSalesTax = 0;
+
 
         for (Item listItem : itemList) {
-            double itemPriceBeforTax=listItem.getCost();
+            double itemPriceBeforeTax = listItem.getCost();
             Item itemWithTaxApplied = getItemFinalPriceIncludingTax(listItem);
-            totalSalesTax = totalSalesTax + (itemWithTaxApplied.getCost()- itemPriceBeforTax);
+            totalSalesTax = totalSalesTax + (itemWithTaxApplied.getCost() - itemPriceBeforeTax);
             updatedInvoiceList.add(itemWithTaxApplied);
 
         }
-        finalPriceAfterTaxApplied=getFinalPurchasedPrice(updatedInvoiceList);
-        System.out.println(finalPriceAfterTaxApplied);
-        printInvoice(updatedInvoiceList,totalSalesTax,finalPriceAfterTaxApplied);
+        finalPriceAfterTaxApplied = getFinalPurchasedPrice(updatedInvoiceList);
+        printInvoice(updatedInvoiceList, totalSalesTax, finalPriceAfterTaxApplied);
 
 
     }
 
-    void printInvoice(ArrayList<Item> updatedInvoiceList,double totalSalesTax,double finalPriceAfterTaxApplied){
-        System.out.println(updatedInvoiceList);
-        System.out.println(totalSalesTax);
-        System.out.println(finalPriceAfterTaxApplied);
-
+    void printInvoice(ArrayList<Item> updatedInvoiceList, double totalSalesTax, double finalPriceAfterTaxApplied) {
+        for (Item listItem : updatedInvoiceList) {
+            System.out.println(listItem.getQuantity()+" "+listItem.getItemName()+": "+listItem.getCost());
+        }
+        System.out.println("Sales Taxes: "+totalSalesTax);
+        System.out.println("Total: "+finalPriceAfterTaxApplied);
     }
 }
