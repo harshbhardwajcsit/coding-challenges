@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-xl-12 main-title">
-      <h4>Fresh Print Image Editor challenge</h4>
+      <h4>Design your t-shirt</h4>
     </div>
     <div class="col-xl-12">
       <div class="row">
         <div class="col-xl-12 text-right">
-          <button  data-toggle="tooltip" data-placement="bottom" title="Export to image" type="button" class="btn btn-primary" (click)="rasterize();">
+          <button data-toggle="tooltip" data-placement="bottom" title="Export to image" type="button" class="btn btn-primary" (click)="rasterize();">
             <i class="fa fa-download" aria-hidden="true"></i> Export to image</button>
           <button data-toggle="tooltip" data-placement="bottom" title="Export to SVG" type="button" class="btn btn-primary" (click)="rasterizeSVG();">
             <i class="fa fa-download" aria-hidden="true"></i> Export to SVG</button>
@@ -40,14 +40,12 @@
           </div>
         </div>
       </div>
-      <br/>
-      <br/>
       <div class="card">
         <div class="card-header">Upload image</div>
         <div class="card-body text-center">
           <img id="testImage" *ngIf="url" class="images-item-upload" [src]="url" (click)="addImageOnCanvas(url);">
           <input type="file" (change)="readUrl($event);">
-          <br/>
+            <br/>
           <br/>
           <div class="btn-group btn-group-justified" role="group" aria-label="...">
             <div class="btn-group" role="group">
@@ -59,7 +57,40 @@
       </div>
     </div>
     <div class="col-xl-6">
-      <canvas id="canvas"></canvas>
+      <canvas id="canvas">
+
+      </canvas>
+    </div>
+    <div class="col-xl-3">
+      <div class="card">
+        <div class="card-header">Delete selected</div>
+        <div class="card-body text-center">
+          <div class="btn-group" role="group" aria-label="...">
+            <button data-toggle="tooltip" data-placement="bottom" title="Delete element" type="button" class="btn btn-outline-danger" [disabled]="!selected"
+                    (click)="removeSelected();">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <div class="row">
+    <div class="col-xl-12">
+      <br/>
+      <div class="card">
+        <div class="card-header">
+          <button type="button" class="btn btn-primary btn-sm" (click)="rasterizeJSON()">
+            <i class="fa fa-refresh" aria-hidden="true"></i> Render to json</button>
+        </div>
+        <div class="card-body">
+          <pre>{{json}}</pre>
+        </div>
+      </div>
     </div>
   </div>
   <br>

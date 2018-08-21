@@ -1,26 +1,21 @@
 {
-  "name": "angular-editor-fabric-js",
+  "name": "Image Editor",
   "version": "2.0.0",
   "description": "Drag and drop editor based on Fabricjs (Angular Cli)",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
-    "build": "ng build --prod --outputPath=dist",
+    "start": "ng serve",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "npm run build"
-  },
-  "engines": {
-    "node": "6.11.0",
-    "npm": "3.10.10"
+    "e2e": "ng e2e"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/kevoj/angular-editor-fabric-js"
   },
-  "author": "",
+  "author": "Leonardo Rico Guevara (https://github.com/kevoj)",
   "keywords": [
     "kitchensink",
     "kitchensink-angular",
@@ -34,8 +29,6 @@
     "angular-fabric"
   ],
   "dependencies": {
-    "typescript": "~2.5.3",
-    "@angular/cli": "1.6.5",
     "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",
@@ -55,6 +48,7 @@
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
+    "@angular/cli": "1.6.5",
     "@angular/compiler-cli": "^5.2.0",
     "@angular/language-service": "^5.2.0",
     "@types/jasmine": "~2.8.3",
@@ -71,6 +65,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.2",
     "ts-node": "~4.1.0",
-    "tslint": "~5.9.1"
+    "tslint": "~5.9.1",
+    "typescript": "~2.5.3"
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import 'fabric';
+import {forEach} from "@angular/router/src/utils/collection";
 declare const fabric: any;
 @Component({
   selector: 'app-editor-home',
@@ -10,6 +11,7 @@ export class EditorHomeComponent implements OnInit {
 
 
   private canvas: any;
+  private choosedImages=[];
   private props: any = {
     canvasFill: '#ffffff',
     canvasImage: '',
@@ -29,7 +31,7 @@ export class EditorHomeComponent implements OnInit {
   private textString: string;
   private url: string = '';
   private size: any = {
-    width: 500,
+    width: 550,
     height: 800
   };
 
@@ -70,12 +72,6 @@ export class EditorHomeComponent implements OnInit {
           this.getOpacity();
 
           switch (selectedObject.type) {
-            case 'rect':
-            case 'circle':
-            case 'triangle':
-              this.figureEditor = true;
-              this.getFill();
-              break;
             case 'i-text':
               this.textEditor = true;
               this.getLineHeight();
@@ -166,6 +162,7 @@ export class EditorHomeComponent implements OnInit {
   //Block "Upload Image"
 
   addImageOnCanvas(url) {
+
     if (url) {
       fabric.Image.fromURL(url, (image) => {
         image.set({
@@ -187,16 +184,18 @@ export class EditorHomeComponent implements OnInit {
 
   readUrl(event) {
     if (event.target.files && event.target.files[0]) {
-      var reader = new FileReader();
+      let reader = new FileReader();
       reader.onload = (event) => {
         this.url = event.target['result'];
-      }
+      };
       reader.readAsDataURL(event.target.files[0]);
+
     }
+
   }
 
   removeWhite(url) {
-    this.url = '';
+    this.url=null;
   };
 
   /*Canvas*/
@@ -484,6 +483,7 @@ export class EditorHomeComponent implements OnInit {
 
   confirmClear() {
     if (confirm('Are you sure?')) {
+      console.log(this.canvas);
       this.canvas.clear();
     }
   }
