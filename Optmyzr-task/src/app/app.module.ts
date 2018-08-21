@@ -22,7 +22,7 @@ import {GetTimeStampService} from "./services/getTimeStamp/get-time-stamp.servic
     AppRouterModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAIa3yZTOXXlknH_2VGoPKLe_cE3GVMjoU'
+      apiKey: 'AIzaSyAYfnEdyDBFRM-sjEDAPGdr5DRxojo_MDs'
     })
   ],
   providers: [ApplicationUrlService,GetTimeStampService],

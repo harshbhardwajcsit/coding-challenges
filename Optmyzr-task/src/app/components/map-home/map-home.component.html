@@ -9,9 +9,9 @@
 
 
     <agm-marker
-      *ngFor="let m of demoMarkers; let i = index"
-      [latitude]="m.lat"
-      [longitude]="m.lng"
+      *ngFor="let m of demoMarkers||currentUserLocationMarker; let i = index"
+      [latitude]="m.lat||lat"
+      [longitude]="m.lng||lng"
       [label]="m.label"
       [markerDraggable]="m.draggable">
       <agm-info-window>
@@ -25,12 +25,12 @@
 
 
 
-  <agm-circle [latitude]="lat + 0.3" [longitude]="lng"
-              [radius]="5000"
-              [fillColor]="'red'"
-              [circleDraggable]="true"
-              [editable]="true">
-  </agm-circle>
+  <!--<agm-circle [latitude]="lat + 0.3" [longitude]="lng"-->
+              <!--[radius]="5000"-->
+              <!--[fillColor]="'red'"-->
+              <!--[circleDraggable]="true"-->
+              <!--[editable]="true">-->
+  <!--</agm-circle>-->
    </agm-map>
 
 

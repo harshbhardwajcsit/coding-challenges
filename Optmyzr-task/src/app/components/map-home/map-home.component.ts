@@ -21,6 +21,7 @@ export class MapHomeComponent implements OnInit {
   temperature:any;
   weather:any;
   demoMarkers:any=[];
+  currentUserLocationMarker:any=[];
 
 
 
@@ -35,8 +36,14 @@ export class MapHomeComponent implements OnInit {
     let geoLocationCoordinates: any = this;
     this.getUserCurrentLocation.getGeoLocationOfUser().then(function (response) {
       if(response){
-        geoLocationCoordinates.lng=response.longitude;
-        geoLocationCoordinates.lat=response.latitude;
+        geoLocationCoordinates.currentUserLocationMarker=[{
+          lng:response.longitude,
+          lat:response.latitude,
+          label: 'o.o',
+          draggable: true
+        }]
+
+
       }
 
     },function(error){
