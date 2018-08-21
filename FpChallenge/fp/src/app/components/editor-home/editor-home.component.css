@@ -2,7 +2,15 @@
   border: 2px dashed #cccccc;
 }
 .main-title{
-  margin-top: 10px;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  margin-left: 27rem;
+  margin-right: 27rem;
+
+  font-family: "Montserrat", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+  line-height: 4.2;
+  color: #5a5a5a;
 }
 .images-item {
   width: 48%;

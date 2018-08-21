@@ -32,7 +32,7 @@ export class EditorHomeComponent implements OnInit {
   private url: string = '';
   private size: any = {
     width: 550,
-    height: 800
+    height: 600
   };
 
   private json: any;

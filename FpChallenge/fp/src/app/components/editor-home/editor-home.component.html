@@ -3,24 +3,6 @@
     <div class="col-xl-12 main-title">
       <h4>Design your t-shirt</h4>
     </div>
-    <div class="col-xl-12">
-      <div class="row">
-        <div class="col-xl-12 text-right">
-          <button data-toggle="tooltip" data-placement="bottom" title="Export to image" type="button" class="btn btn-primary" (click)="rasterize();">
-            <i class="fa fa-download" aria-hidden="true"></i> Export to image</button>
-          <button data-toggle="tooltip" data-placement="bottom" title="Export to SVG" type="button" class="btn btn-primary" (click)="rasterizeSVG();">
-            <i class="fa fa-download" aria-hidden="true"></i> Export to SVG</button>
-          <button data-toggle="tooltip" data-placement="bottom" title="Save in localStorage" type="button" class="btn btn-primary"
-                  (click)="saveCanvasToJSON();">
-            <i class="fa fa-save" aria-hidden="true"></i> Save local</button>
-          <button data-toggle="tooltip" data-placement="bottom" title="Load from localStorage" type="button" class="btn btn-primary"
-                  (click)="loadCanvasFromJSON();">
-            <i class="fa fa-save" aria-hidden="true"></i> Load local</button>
-          <button data-toggle="tooltip" data-placement="bottom" title="Clean Canvas" type="button" class="btn btn-danger" (click)="confirmClear();">
-            <i class="fa fa-ban" aria-hidden="true"></i> Clean</button>
-        </div>
-      </div>
-    </div>
   </div>
   <hr>
   <div class="row">
@@ -70,29 +52,34 @@
                     (click)="removeSelected();">
               <i class="fa fa-trash" aria-hidden="true"></i>
             </button>
-
           </div>
         </div>
+        <div class="card-body text-center">
+          <button data-toggle="tooltip" data-placement="bottom" title="Export to image" type="button" class="btn btn-primary" (click)="rasterize();">
+            <i class="fa fa-download" aria-hidden="true"></i> Export to image</button>
+          <br>
+          <br>
+          <button data-toggle="tooltip" data-placement="bottom" title="Export to SVG" type="button" class="btn btn-primary" (click)="rasterizeSVG();">
+            <i class="fa fa-download" aria-hidden="true"></i>Download Design</button>
+          <br>
+          <br>
+          <button data-toggle="tooltip" data-placement="bottom" title="Save in localStorage" type="button" class="btn btn-primary"
+                  (click)="saveCanvasToJSON();">
+            <i class="fa fa-save" aria-hidden="true"></i>Save Selection</button>
+          <br>
+          <br>
+          <button data-toggle="tooltip" data-placement="bottom" title="Load from localStorage" type="button" class="btn btn-primary"
+                  (click)="loadCanvasFromJSON();">
+            <i class="fa fa-save" aria-hidden="true"></i>Last Selection</button>
+          <br>
+          <br>
+          <button data-toggle="tooltip" data-placement="bottom" title="Clean Canvas" type="button" class="btn btn-danger" (click)="confirmClear();">
+            <i class="fa fa-ban" aria-hidden="true"></i>Reset Canvas</button>
+          <br>
+          <br>
+        </div>
       </div>
     </div>
   </div>
-  <br>
-  <br>
-
-  <div class="row">
-    <div class="col-xl-12">
-      <br/>
-      <div class="card">
-        <div class="card-header">
-          <button type="button" class="btn btn-primary btn-sm" (click)="rasterizeJSON()">
-            <i class="fa fa-refresh" aria-hidden="true"></i> Render to json</button>
-        </div>
-        <div class="card-body">
-          <pre>{{json}}</pre>
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
   <br>
 </div>
