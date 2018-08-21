@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-12 main-title">
+      <h4>Fresh Print Image Editor challenge</h4>
+    </div>
+    <div class="col-xl-12">
+      <div class="row">
+        <div class="col-xl-12 text-right">
+          <button  data-toggle="tooltip" data-placement="bottom" title="Export to image" type="button" class="btn btn-primary" (click)="rasterize();">
+            <i class="fa fa-download" aria-hidden="true"></i> Export to image</button>
+          <button data-toggle="tooltip" data-placement="bottom" title="Export to SVG" type="button" class="btn btn-primary" (click)="rasterizeSVG();">
+            <i class="fa fa-download" aria-hidden="true"></i> Export to SVG</button>
+          <button data-toggle="tooltip" data-placement="bottom" title="Save in localStorage" type="button" class="btn btn-primary"
+                  (click)="saveCanvasToJSON();">
+            <i class="fa fa-save" aria-hidden="true"></i> Save local</button>
+          <button data-toggle="tooltip" data-placement="bottom" title="Load from localStorage" type="button" class="btn btn-primary"
+                  (click)="loadCanvasFromJSON();">
+            <i class="fa fa-save" aria-hidden="true"></i> Load local</button>
+          <button data-toggle="tooltip" data-placement="bottom" title="Clean Canvas" type="button" class="btn btn-danger" (click)="confirmClear();">
+            <i class="fa fa-ban" aria-hidden="true"></i> Clean</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xl-3">
+      <div class="card">
+        <div class="card-header">Add text</div>
+        <div class="card-body">
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="textString">
+            <div class="input-group-append">
+                            <span class="input-group-text">
+                                <button id="add-text" data-toggle="tooltip" data-placement="bottom" title="Add text" class="btn btn-primary" (click)="addText()">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                </button>
+                            </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br/>
+      <br/>
+      <div class="card">
+        <div class="card-header">Upload image</div>
+        <div class="card-body text-center">
+          <img id="testImage" *ngIf="url" class="images-item-upload" [src]="url" (click)="addImageOnCanvas(url);">
+          <input type="file" (change)="readUrl($event);">
+          <br/>
+          <br/>
+          <div class="btn-group btn-group-justified" role="group" aria-label="...">
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-outline-danger btn-sm" (click)="removeWhite(url);">
+                <i class="fa fa-times" aria-hidden="true"></i> Remove</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <canvas id="canvas"></canvas>
+    </div>
+  </div>
+  <br>
+  <br>
+</div>
