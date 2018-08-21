@@ -198,6 +198,23 @@ export class EditorHomeComponent implements OnInit {
     this.url=null;
   };
 
+
+  download() {
+    let canvas=this.canvas;
+    let filename="canvas.png";
+    let lnk = document.createElement('a'), e;
+    lnk.download = filename;
+    lnk.href = canvas.toDataURL("image/png;base64");
+    if (document.createEvent) {
+      e = document.createEvent("MouseEvents");
+      e.initMouseEvent("click", true, true, window,
+        0, 0, 0, 0, 0, false, false, false,
+        false, 0, null);
+
+      lnk.dispatchEvent(e);
+    }
+  }
+
   /*Canvas*/
 
   cleanSelect() {

@@ -45,7 +45,7 @@
     </div>
     <div class="col-xl-3">
       <div class="card">
-        <div class="card-header">Delete selected</div>
+        <div class="card-header">Options</div>
         <div class="card-body text-center">
           <div class="btn-group" role="group" aria-label="...">
             <button data-toggle="tooltip" data-placement="bottom" title="Delete element" type="button" class="btn btn-outline-danger" [disabled]="!selected"
@@ -55,26 +55,26 @@
           </div>
         </div>
         <div class="card-body text-center">
-          <button data-toggle="tooltip" data-placement="bottom" title="Export to image" type="button" class="btn btn-primary" (click)="rasterize();">
-            <i class="fa fa-download" aria-hidden="true"></i> Export to image</button>
-          <br>
-          <br>
-          <button data-toggle="tooltip" data-placement="bottom" title="Export to SVG" type="button" class="btn btn-primary" (click)="rasterizeSVG();">
-            <i class="fa fa-download" aria-hidden="true"></i>Download Design</button>
+          <button data-toggle="tooltip" data-placement="bottom" title="Export to SVG" type="button" class="btn btn-primary" (click)="download();">
+           Download Design
+          </button>
           <br>
           <br>
           <button data-toggle="tooltip" data-placement="bottom" title="Save in localStorage" type="button" class="btn btn-primary"
                   (click)="saveCanvasToJSON();">
-            <i class="fa fa-save" aria-hidden="true"></i>Save Selection</button>
+            Save Selection
+          </button>
           <br>
           <br>
           <button data-toggle="tooltip" data-placement="bottom" title="Load from localStorage" type="button" class="btn btn-primary"
                   (click)="loadCanvasFromJSON();">
-            <i class="fa fa-save" aria-hidden="true"></i>Last Selection</button>
+            Last Selection
+          </button>
           <br>
           <br>
           <button data-toggle="tooltip" data-placement="bottom" title="Clean Canvas" type="button" class="btn btn-danger" (click)="confirmClear();">
-            <i class="fa fa-ban" aria-hidden="true"></i>Reset Canvas</button>
+            Reset Canvas
+          </button>
           <br>
           <br>
         </div>
