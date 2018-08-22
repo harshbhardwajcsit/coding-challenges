@@ -9,7 +9,7 @@ declare const fabric: any;
 })
 export class EditorHomeComponent implements OnInit {
 
-
+  private fileName:string;
   private canvas: any;
   private choosedImages=[];
   private props: any = {
