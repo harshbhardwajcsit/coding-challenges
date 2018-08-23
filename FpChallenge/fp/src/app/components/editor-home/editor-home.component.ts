@@ -201,7 +201,7 @@ export class EditorHomeComponent implements OnInit {
 
   download() {
     let canvas=this.canvas;
-    let filename="canvas.png";
+    let filename=this.fileName;
     let lnk = document.createElement('a'), e;
     lnk.download = filename;
     lnk.href = canvas.toDataURL("image/png;base64");
