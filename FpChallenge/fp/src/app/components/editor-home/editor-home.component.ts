@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, state} from '@angular/core';
 import 'fabric';
 import {forEach} from "@angular/router/src/utils/collection";
 declare const fabric: any;
@@ -12,6 +12,7 @@ export class EditorHomeComponent implements OnInit {
   private fileName:string;
   private canvas: any;
   private choosedImages=[];
+  private ctr:number=0;
   private props: any = {
     canvasFill: '#ffffff',
     canvasImage: '',
@@ -216,6 +217,12 @@ export class EditorHomeComponent implements OnInit {
   }
 
   /*Canvas*/
+
+   undo() {
+    this.ctr = this.ctr - 1;
+    console.log('u :' + state[state.length - 1 + this.ctr]);
+    this.canvas.loadFromJSON(state[state.length - 1 + this.ctr], this.canvas.renderAll.bind(this.canvas));
+  }
 
   cleanSelect() {
     this.canvas.deactivateAllWithDispatch().renderAll();
@@ -470,7 +477,7 @@ export class EditorHomeComponent implements OnInit {
 
     if (activeObject) {
       activeObject.bringToFront();
-      // activeObject.opacity = 1;
+      activeObject.opacity = 1;
     }
     else if (activeGroup) {
       let objectsInGroup = activeGroup.getObjects();
@@ -487,7 +494,7 @@ export class EditorHomeComponent implements OnInit {
 
     if (activeObject) {
       activeObject.sendToBack();
-      // activeObject.opacity = 1;
+      activeObject.opacity = 1;
     }
     else if (activeGroup) {
       let objectsInGroup = activeGroup.getObjects();
