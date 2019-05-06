@@ -1,36 +1,3 @@
-<agm-map
-  [latitude]="lat"
-  [longitude]="lng"
-  [zoom]="zoom"
-  [disableDefaultUI]="false"
-  [zoomControl]="true"
-  [clickableIcons]="true"
-  (mapClick)="mapClicked($event)">
-
-
-    <agm-marker
-      *ngFor="let m of demoMarkers||currentUserLocationMarker; let i = index"
-      [latitude]="m.lat||lat"
-      [longitude]="m.lng||lng"
-      [label]="m.label"
-      [markerDraggable]="m.draggable">
-      <agm-info-window>
-        <strong>Temperature in celsius : {{temperature}}</strong><br>
-        <strong>Climate : {{weather}}</strong><br>
-        <strong>Standard Time Zone :{{standardTimeZone}}</strong><br>
-        <strong>In Your Time Zone :{{localTimeZone}}</strong><br>
-      </agm-info-window>
-
-    </agm-marker>
-
-
-
-  <!--<agm-circle [latitude]="lat + 0.3" [longitude]="lng"-->
-              <!--[radius]="5000"-->
-              <!--[fillColor]="'red'"-->
-              <!--[circleDraggable]="true"-->
-              <!--[editable]="true">-->
-  <!--</agm-circle>-->
-   </agm-map>
-
-
+<p>
+  Working
+</p>

@@ -1,31 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-
-import { AppComponent } from './app.component';
-import { MapHomeComponent } from './components/map-home/map-home.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppComponent} from './app.component';
+import {MapHomeComponent} from './components/map-home/map-home.component';
 import {AppRouterModule} from './app.router.module';
-import {AgmCoreModule} from '@agm/core';
 import {HttpClientModule} from "@angular/common/http";
-import {GetWeatherInfoService} from "./services/getWeatherInfo/get-weather-info.service";
-import {ApplicationUrlService} from "./services/applicationUrlService/application-url.service";
-import {GetTimeStampService} from "./services/getTimeStamp/get-time-stamp.service";
-
+import {M2Component} from "./components/m2/m2.component";
+import {Service1Service} from "./services/service1.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    MapHomeComponent
+    MapHomeComponent,
+    M2Component
   ],
   imports: [
     BrowserModule,
     AppRouterModule,
-    HttpClientModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAYfnEdyDBFRM-sjEDAPGdr5DRxojo_MDs'
-    })
+    HttpClientModule
   ],
-  providers: [ApplicationUrlService,GetTimeStampService],
+  providers: [Service1Service],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
