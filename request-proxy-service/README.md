@@ -1,8 +1,8 @@
 # Request Proxy Service
 
 The System has be been built using Spring boot framework, with an exposed endpoint/REST API  
-* host/api/v1/reply, where host is the server where the system has been deployed or running, v1 is for the versioning of the API
-* for local testing or postman testing : use localhost:8090/api/v1/reply 
+* host/api/v1/replay, where host is the server where the system has been deployed or running, v1 is for the versioning of the API
+* for local testing or postman testing : use localhost:8090/api/v1/replay 
 
 ## Requirements
 
