@@ -1,8 +1,12 @@
 package com.freshworks.requestproxy.model;
 
 public enum SupportedRequestTypes {
+
     POST("POST"),
-    GET("GET");
+    GET("GET"),
+    PUT("PUT"),
+    DELETE("DELETE"),
+    PATCH("PATCH");
 
     private String requestType;
 

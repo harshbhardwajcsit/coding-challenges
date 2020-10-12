@@ -9,10 +9,10 @@ import org.apache.commons.validator.routines.UrlValidator;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.Date;
 
 public class RequestValidator {
 
@@ -33,16 +33,15 @@ public class RequestValidator {
         return supportedRequestTypes.contains(request.getRequest());
     }
 
-    public static Boolean isMaximumRequestLimitReached(Optional<Transaction> transaction, int limit){
+    public static Boolean isMaximumRequestLimitReached(Optional<Transaction> transaction, int limit) {
 
-        if(transaction.isPresent()){
+        if (transaction.isPresent()) {
             final Date lastAccessed = transaction.get().getAccessTime();
-            final Long seconds = (new Date().getTime()-lastAccessed.getTime())/1000;
-            if(seconds < 60){
+            final long seconds = (new Date().getTime() - lastAccessed.getTime()) / 1000;
+            if (seconds < 60) {
                 return transaction.get().getAccessCount() >= limit;
             }
         }
-
-        return Boolean.TRUE;
+        return Boolean.FALSE;
     }
 }

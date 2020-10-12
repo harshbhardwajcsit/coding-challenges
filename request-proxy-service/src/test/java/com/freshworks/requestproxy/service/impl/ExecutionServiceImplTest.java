@@ -6,9 +6,10 @@ import com.freshworks.requestproxy.TestConstants;
 import com.freshworks.requestproxy.constant.MessageConstants;
 import com.freshworks.requestproxy.entity.requestEntity.CommonRequest;
 import com.freshworks.requestproxy.entity.responseEntity.CommonResponse;
+import com.freshworks.requestproxy.exception.RequestParseException;
 import com.freshworks.requestproxy.exception.RequestTimeoutException;
 import com.freshworks.requestproxy.model.SupportedRequestTypes;
-import com.google.gson.JsonObject;
+import org.json.JSONObject;
 import org.junit.Assert;
 import org.junit.experimental.categories.Category;
 import org.junit.jupiter.api.BeforeEach;
@@ -47,8 +48,8 @@ public class ExecutionServiceImplTest {
     }
 
     @Test
-    public void testWithInValidUrlRequest() throws RequestTimeoutException, URISyntaxException, IOException {
-        final CommonRequest invalidRequest = new CommonRequest(1000L,"http://abc.com", new JsonObject(), SupportedRequestTypes.GET.name(), "");
+    public void testWithInValidUrlRequest() throws RequestTimeoutException, URISyntaxException, IOException, RequestParseException {
+        final CommonRequest invalidRequest = new CommonRequest(1000L,"http://abc.com", new JSONObject(), SupportedRequestTypes.GET.name(), "");
         final CommonResponse<?> response = executionService.executeRequest(invalidRequest);
         Assert.assertEquals(HttpStatus.BAD_REQUEST.value(), response.getResponseCode());
         Assert.assertEquals(MessageConstants.MALFORMED_URL_STRUCTURE, response.getMessage());
@@ -56,7 +57,7 @@ public class ExecutionServiceImplTest {
     }
 
     @Test
-    public void testWithMissingParametersInRequest() throws RequestTimeoutException, URISyntaxException, IOException {
+    public void testWithMissingParametersInRequest() throws RequestTimeoutException, URISyntaxException, IOException, RequestParseException {
         final CommonRequest invalidRequest = new CommonRequest(1000L,"https://abc.com", null, SupportedRequestTypes.GET.name(), "");
         final CommonResponse<?> response = executionService.executeRequest(invalidRequest);
         Assert.assertEquals(HttpStatus.BAD_REQUEST.value(), response.getResponseCode());
@@ -64,8 +65,8 @@ public class ExecutionServiceImplTest {
     }
 
     @Test
-    public void testWithUnsupportedRequestType() throws RequestTimeoutException, URISyntaxException, IOException {
-        final CommonRequest invalidRequest = new CommonRequest(1000L, "https://abc.com", new JsonObject(), TestConstants.PUT, "");
+    public void testWithUnsupportedRequestType() throws RequestTimeoutException, URISyntaxException, IOException, RequestParseException {
+        final CommonRequest invalidRequest = new CommonRequest(1000L, "https://abc.com", new JSONObject(), TestConstants.UNKNOWN_REQUEST_TYPE, "");
         final CommonResponse<?> response = executionService.executeRequest(invalidRequest);
         Assert.assertEquals(HttpStatus.BAD_REQUEST.value(), response.getResponseCode());
         Assert.assertEquals(MessageConstants.UNSUPPORTED_REQUEST, response.getMessage());

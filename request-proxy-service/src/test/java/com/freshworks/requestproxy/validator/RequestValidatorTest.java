@@ -5,7 +5,7 @@ import com.freshworks.requestproxy.TestConstants;
 import com.freshworks.requestproxy.entity.requestEntity.CommonRequest;
 import com.freshworks.requestproxy.model.SupportedRequestTypes;
 import com.freshworks.requestproxy.model.Transaction;
-import com.google.gson.JsonObject;
+import org.json.JSONObject;
 import org.junit.Assert;
 import org.junit.experimental.categories.Category;
 import org.junit.jupiter.api.Test;
@@ -71,7 +71,7 @@ public class RequestValidatorTest {
         //given
         final String url = "http://abc.com";
         final CommonRequest invalidRequest = new CommonRequest(1000L,url,null, null, "");
-        final CommonRequest validRequest = new CommonRequest(1000L,url, new JsonObject(), SupportedRequestTypes.GET.name(), "");
+        final CommonRequest validRequest = new CommonRequest(1000L,url, new JSONObject(), SupportedRequestTypes.GET.name(), "");
 
         //when
         final Boolean inValidRequest = RequestValidator.isValidRequest(invalidRequest);
@@ -86,7 +86,7 @@ public class RequestValidatorTest {
     public void testForInValidRequestType(){
         //given
         final String url = "https://abc.com";
-        final CommonRequest request = new CommonRequest(1000L,url, new JsonObject(), TestConstants.PUT, "");
+        final CommonRequest request = new CommonRequest(1000L,url, new JSONObject(), TestConstants.UNKNOWN_REQUEST_TYPE, "");
 
         //when
         final Boolean isRequestWithValidType = RequestValidator.isValidRequestType(request);

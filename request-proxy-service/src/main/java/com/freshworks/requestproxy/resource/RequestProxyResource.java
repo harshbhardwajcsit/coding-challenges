@@ -3,6 +3,7 @@ package com.freshworks.requestproxy.resource;
 import com.freshworks.requestproxy.constant.CommonConstants;
 import com.freshworks.requestproxy.entity.requestEntity.CommonRequest;
 import com.freshworks.requestproxy.entity.responseEntity.CommonResponse;
+import com.freshworks.requestproxy.exception.RequestParseException;
 import com.freshworks.requestproxy.exception.RequestTimeoutException;
 import com.freshworks.requestproxy.service.ExecutionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class RequestProxyResource {
     }
 
     @PostMapping
-    public CommonResponse<?> processRequest(@RequestBody CommonRequest commonRequest) throws RequestTimeoutException, IOException, URISyntaxException {
+    public CommonResponse<?> processRequest(@RequestBody CommonRequest commonRequest) throws RequestTimeoutException, URISyntaxException, IOException, RequestParseException {
         return executionService.executeRequest(commonRequest);
     }
 

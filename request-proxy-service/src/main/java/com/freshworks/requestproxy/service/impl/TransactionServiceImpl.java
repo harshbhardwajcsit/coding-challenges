@@ -19,9 +19,11 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public Optional<Transaction> getClientAccessRecords(Long clientId) {
+
         if (transactions.containsKey(clientId)) {
             return Optional.ofNullable(transactions.get(clientId));
         }
+
         return Optional.empty();
     }
 

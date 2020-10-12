@@ -90,28 +90,6 @@ class RequestProxyServiceIntegrationTests {
         Assert.assertEquals(responseCode, 400);
     }
 
-    @Test
-    public void testRequestProcessorWithInvalidUrl() throws IOException {
-
-        String body = "{\n    \"clientId\" :1000,\n     \"url\":\"http://google.com\",\n     \"headers\": {\n       \"Accept\":\"application/json\"\n     },\n    \"request\":\"GET\",\n     \"body\":\"abc\"\n}";
-
-        outputStream.write(body.getBytes());
-
-        int responseCode = connection.getResponseCode();
-        if (responseCode == HttpURLConnection.HTTP_OK) {
-            String inputLine;
-            StringBuffer response = new StringBuffer();
-            inputStream = new BufferedReader(new InputStreamReader(
-                    connection.getInputStream()));
-            while ((inputLine = inputStream.readLine()) != null) {
-                response.append(inputLine);
-            }
-            inputStream.close();
-        }
-
-        Assert.assertEquals(responseCode, 400);
-    }
-
     private String createURLWithPort(String uri) {
         return "http://localhost:8090" + uri;
     }
