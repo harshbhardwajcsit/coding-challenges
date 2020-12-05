@@ -1,4 +1,4 @@
-package com.practise;
+package com.practise.array_manupulation;
 
 import java.util.HashMap;
 import java.util.Map;

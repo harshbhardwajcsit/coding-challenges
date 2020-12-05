@@ -20,7 +20,7 @@ Solution :
  */
 
 
-package com.practise;
+package com.practise.array_manupulation;
 
 public class MajorityElement {
 

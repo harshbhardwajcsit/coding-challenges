@@ -1,4 +1,4 @@
-package com.practise;
+package com.practise.dynamic_programming;
 
 import java.util.HashSet;
 import java.util.Set;
