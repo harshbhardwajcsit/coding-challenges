@@ -75,8 +75,8 @@ I have tried my best to sort all those problems for you and ordered them as well
 | 5      | Sliding Window Maximum                                   | [LeetCode](https://leetcode.com/problems/sliding-window-maximum/) , [InterviewBit](https://www.interviewbit.com/problems/sliding-window-maximum/)                                     |
 
 ### Binary Tree
-| **ID** | **PROBLEM STATEMENT**                                   | **PROBLEM LINK**               |
-|--------|---------------------------------------------------------|--------------------------------|
+| **ID** | **PROBLEM STATEMENT**                                   | **PROBLEM LINK**               | Status |
+|--------|---------------------------------------------------------|--------------------------------|--------|
 | 1      | Determine Height of a binary tree                       |  [LeetCode](https://leetcode.com/problems/maximum-depth-of-binary-tree/) , [InterviewBit](https://www.interviewbit.com/problems/max-depth-of-binary-tree/)                                   |
 | 2      | Inorder Traversal                                       | [InterviewBit](https://www.interviewbit.com/problems/inorder-traversal/)                                          |
 | 3      | Preorder Traversal                                      |  [InterviewBit](https://www.interviewbit.com/problems/preorder-traversal/)                                         |
@@ -96,11 +96,11 @@ I have tried my best to sort all those problems for you and ordered them as well
 | 17     | Vertical order Traversal                                |  [InterviewBit](https://www.interviewbit.com/problems/vertical-order-traversal-of-binary-tree/)                    |
 | 18     | Top View Of Binary Tree                                 |  [GFG](https://practice.geeksforgeeks.org/problems/top-view-of-binary-tree/1)                             |
 | 19     | Bottom View of Binary Tree                              |  [GFG](https://practice.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1)                          |
-| 20     | Check if Root to Leaf path sum exist                    |  [InterviewBit](https://www.interviewbit.com/problems/path-sum/) ,                     [LeetCode](https://leetcode.com/problems/path-sum/)                                                           |
-| 21     | All Root to Leaf path sum                     |  [InterviewBit](https://www.interviewbit.com/problems/root-to-leaf-paths-with-sum/) ,   [LeetCode](https://leetcode.com/problems/path-sum-ii/)                                                        |
+| 20     | Check if Root to Leaf path sum exist                    |  [InterviewBit](https://www.interviewbit.com/problems/path-sum/) ,                     [LeetCode](https://leetcode.com/problems/path-sum/)  | Done |                                                         |
+| 21     | All Root to Leaf path sum                     |  [InterviewBit](https://www.interviewbit.com/problems/root-to-leaf-paths-with-sum/) ,   [LeetCode](https://leetcode.com/problems/path-sum-ii/)   | Done |                                                     |
 | 22     | Maximum path sum from leaf to leaf                      | [GFG](https://practice.geeksforgeeks.org/problems/maximum-path-sum/1)                                    |
 | 23     | Maximum path sum from any node to any node              | [LeetCode](https://leetcode.com/problems/binary-tree-maximum-path-sum/)                                       |
-| 24     | Least Common Ancestor                                   |  [LeetCode](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)                            |
+| 24     | Least Common Ancestor                                   |  [LeetCode](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)                            | Done |
 | 25     | Find the distance between two nodes of a Binary Tree    |  [GFG](https://practice.geeksforgeeks.org/problems/min-distance-between-two-given-nodes-of-a-binary-tree/1)                                                                                                                          |
 
 ### Binary Search Tree
