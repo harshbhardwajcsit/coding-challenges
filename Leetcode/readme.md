@@ -24,7 +24,7 @@ I have tried my best to sort all those problems for you and ordered them as well
 | 1      | Missing number in array                     | [Leetcode](https://leetcode.com/problems/missing-number/) ,  [GFG](https://practice.geeksforgeeks.org/problems/missing-number-in-array/0)           | Done |
 | 2      | Subarray with given sum                     |  [GFG](https://practice.geeksforgeeks.org/problems/subarray-with-given-sum/0)           |
 | 3     | 2 Sum                |  [LeetCode](https://leetcode.com/problems/two-sum/) , [InterviewBit](https://www.interviewbit.com/problems/2-sum/), [GFG](https://practice.geeksforgeeks.org/problems/key-pair/0) ,         | Done
-| 4     | Majority Element               |   [LeetCode](https://leetcode.com/problems/majority-element/)  , [InterviewBit](https://www.interviewbit.com/problems/majority-element/) , [GFG](https://practice.geeksforgeeks.org/problems/majority-element/0)      | Done
+| 4     | Majority Element               |   [LeetCode](https://leetcode.com/problems/majority-element/)  , [InterviewBit](https://www.interviewbit.com/problems/majority-element/) , [GFG](https://practice.geeksforgeeks.org/problems/majority-element/0)      | Done |
 | 5     | Max Consecutive Ones              |        [LeetCode](https://leetcode.com/problems/max-consecutive-ones/) , [InterviewBit](https://www.interviewbit.com/problems/max-continuous-series-of-1s/)     |
 | 6     | Sort an array of 0s, 1s and 2s               |  [GFG](https://practice.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s/0) , [LeetCode](https://leetcode.com/problems/sort-colors/)   |
 | 7     | Spiral Matrix              |        [LeetCode](https://leetcode.com/problems/spiral-matrix/)  , [InterviewBit](https://www.interviewbit.com/problems/spiral-order-matrix-i/)      |
@@ -77,7 +77,7 @@ I have tried my best to sort all those problems for you and ordered them as well
 ### Binary Tree
 | **ID** | **PROBLEM STATEMENT**                                   | **PROBLEM LINK**               | Status |
 |--------|---------------------------------------------------------|--------------------------------|--------|
-| 1      | Determine Height of a binary tree                       |  [LeetCode](https://leetcode.com/problems/maximum-depth-of-binary-tree/) , [InterviewBit](https://www.interviewbit.com/problems/max-depth-of-binary-tree/)                                   |
+| 1      | Determine Height of a binary tree                       |  [LeetCode](https://leetcode.com/problems/maximum-depth-of-binary-tree/) , [InterviewBit](https://www.interviewbit.com/problems/max-depth-of-binary-tree/)        |             Done             |
 | 2      | Inorder Traversal                                       | [InterviewBit](https://www.interviewbit.com/problems/inorder-traversal/)                                          |
 | 3      | Preorder Traversal                                      |  [InterviewBit](https://www.interviewbit.com/problems/preorder-traversal/)                                         |
 | 4      | Postorder Traversal                                     |  [InterviewBit](https://www.interviewbit.com/problems/postorder-traversal/)                                        |
@@ -162,3 +162,10 @@ I have tried my best to sort all those problems for you and ordered them as well
 | 22     | Interleaving String                                  | [LeetCode](https://leetcode.com/problems/interleaving-string/) , [InterviewBit](https://www.interviewbit.com/problems/interleaving-strings/)                                              |
 | 23     | Matrix Chain Multiplication                          | [LeetCode](https://leetcode.com/problems/burst-balloons/)                                                            |
 | 24     | Palindrome Partitioning                              | [LeetCode](https://leetcode.com/problems/palindrome-partitioning-ii/)                                                |
+
+
+
+### Graph related problems
+| **ID** | **PROBLEM STATEMENT**         | **PROBLEM LINK**                                          | **Staus** | **Appeared In**|
+|--------|-------------------------------|-----------------------------------------------------------|-----------|----------------|
+| 1      | Find total number of islands  |  [Techie](https://www.techiedelight.com/count-the-number-of-islands/) | Done| Amazon|
