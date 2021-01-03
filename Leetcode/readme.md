@@ -35,9 +35,9 @@ I have tried my best to sort all those problems for you and ordered them as well
 | 12     | First Missing Positive               |   [LeetCode](https://leetcode.com/problems/first-missing-positive/)  , [InterviewBit](https://www.interviewbit.com/problems/first-missing-integer/)      |
 
 ### LinkedList
-| **ID** | **PROBLEM STATEMENT**                                    |  **PROBLEM LINK**           |
-|--------|----------------------------------------------------------|-----------------------------|
-| 1      | Find middle element in a linked list                     | [LeetCode](https://leetcode.com/problems/middle-of-the-linked-list/) , [GFG](https://practice.geeksforgeeks.org/problems/finding-middle-element-in-a-linked-list/1)           |
+| **ID** | **PROBLEM STATEMENT**                                    |  **PROBLEM LINK**           | **status**| **tips**|
+|--------|----------------------------------------------------------|-----------------------------|-----------|---------|
+| 1      | Find middle element in a linked list                     | [LeetCode](https://leetcode.com/problems/middle-of-the-linked-list/) , [GFG](https://practice.geeksforgeeks.org/problems/finding-middle-element-in-a-linked-list/1)           | Done | Slow and fast pointer(speed : 1 vs 2)
 | 2      | Remove n'th node from end of a linked list          | [LeetCode](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) , [InterviewBit](https://www.interviewbit.com/problems/remove-nth-node-from-list-end/)                            |
 | 3      | Intersection Point in Y shaped linked list               | [LeetCode](https://leetcode.com/problems/intersection-of-two-linked-lists/) , [InterviewBit](https://www.interviewbit.com/problems/intersection-of-linked-lists/)                             |
 | 4      | Reverse a linked list                                    | [LeetCode](https://leetcode.com/problems/reverse-linked-list/) , [InterviewBit](https://www.interviewbit.com/problems/reverse-linked-list/)                                      |
@@ -50,9 +50,9 @@ I have tried my best to sort all those problems for you and ordered them as well
 | 11     | Segregate even and odd valued nodes in a linked list     | [GFG](https://www.geeksforgeeks.org/segregate-even-and-odd-elements-in-a-linked-list/)                 |
 | 12     | Clone a linked list with next and random pointer         | [LeetCode](https://leetcode.com/problems/copy-list-with-random-pointer/) , [GFG](https://practice.geeksforgeeks.org/problems/clone-a-linked-list-with-next-and-random-pointer/1)  |
 | 13     | Reorder List L1->L2->...Ln to L1->Ln->L2->Ln-1....       | [LeetCode](https://leetcode.com/problems/reorder-list/) ,          [InterviewBit](https://www.interviewbit.com/problems/reorder-list/)                                             |
-| 14     | Delete N nodes after M nodes of a linked list            | [GFG](https://practice.geeksforgeeks.org/problems/delete-n-nodes-after-m-nodes-of-a-linked-list/1)     |
-| 15     | Merge K sorted list                                      | [LeetCode](https://leetcode.com/problems/merge-k-sorted-lists/) , [InterviewBit](https://www.interviewbit.com/problems/merge-two-sorted-lists/) , [GFG](https://practice.geeksforgeeks.org/problems/merge-k-sorted-linked-lists/1)                       |
-| 16     | Add two numbers represented by a linked list             | [LeetCode](https://leetcode.com/problems/add-two-numbers/) , [InterviewBit](https://www.interviewbit.com/problems/add-two-numbers-as-lists/)                                 |
+| 14     | Delete N nodes after M nodes of a linked list            | [GFG](https://practice.geeksforgeeks.org/problems/delete-n-nodes-after-m-nodes-of-a-linked-list/1)     | Done | Slow and fast pointer(speed : 1 vs m)|
+| 15     | Merge K sorted list                                      | [LeetCode](https://leetcode.com/problems/merge-k-sorted-lists/) , [InterviewBit](https://www.interviewbit.com/problems/merge-two-sorted-lists/) , [GFG](https://practice.geeksforgeeks.org/problems/merge-k-sorted-linked-lists/1)                       | Done | 1. insert all nk elements in BST, then inorder traversal nkLog(nk)|
+| 16     | Add two numbers represented by a linked list             | [LeetCode](https://leetcode.com/problems/add-two-numbers/) , [InterviewBit](https://www.interviewbit.com/problems/add-two-numbers-as-lists/)                                 | Done | using string manupulation|
 
 ### Stack
 | **ID** | **PROBLEM STATEMENT**                                    |  **PROBLEM LINK**            |
