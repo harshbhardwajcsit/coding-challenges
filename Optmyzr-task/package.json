@@ -19,7 +19,7 @@
   "private": true,
   "dependencies": {
     "typescript": "~2.5.3",
-    "@angular/cli": "~1.7.2",
+    "@angular/cli": "~15.0.4",
     "@agm/core": "^1.0.0-beta.3",
     "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",
